@@ -1,0 +1,43 @@
+a:link {
+  text-decoration: none; }
+
+a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+a:active {
+  text-decoration: none; }
+
+.font-color-light {
+  color: #AEB0B1;
+}
+
+.font-color-regular {
+  color: #888A8B;
+}
+
+.font-color-dark {
+  color: #4E4E4E;
+}
+
+.font-color-black {
+  color: #000000;
+}
+
+.font-size-tiny {
+  font-size: 12px;
+}
+
+.font-size-small {
+  font-size: 16px;
+}
+
+.font-size-regular {
+  font-size: 24px;
+}
+
+.font-size-large {
+  font-size: 50px;
+}
