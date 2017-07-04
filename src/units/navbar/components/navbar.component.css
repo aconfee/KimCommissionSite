@@ -1,4 +1,3 @@
-
 .navbar {
   height: 135px;
   width: 100%; }
@@ -21,37 +20,3 @@
   padding-bottom: 29px;
   position: absolute;
   display: inline-block; }
-
-.navbar .content .navbar-links-container .navbar-link {
-  display: inline-block;
-
-  position: relative;
-  margin-right: 50px; }
-
-
-.navbar .content .navbar-links-container .navbar-link a {
-  display: block;
-}
-
-.navbar a:link {
-  /* regular */
-  color: #888A8B;
-  -webkit-transition: color 0.5s;
-    transition: color 0.5s; }
-
-.navbar a:visited {
-  color: #888A8B; }
-
-.navbar a:hover {
-  color: black; }
-
-.navbar a:active {
-  color: #888A8B; }
-
-.navbar .content .navbar-links-container .navbar-link .active-indicator {
-  display: inline-block;
-
-  position: absolute;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
