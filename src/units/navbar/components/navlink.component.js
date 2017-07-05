@@ -1,17 +1,17 @@
-import React, { Component} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './navlink.component.css';
 
-class Navlink extends Component {
+const Navlink = ({text, url}) => {
 
-  isActive() {
-    return window.location.pathname === this.props.url;
+  const isActive = () => {
+    return window.location.pathname === url;
   }
 
-  render() {
-    let activeIndicator = null;
-    if(this.isActive()) {
-      activeIndicator = (
+  const activeIndicator = () => {
+    if( isActive() ) {
+      return (
         <div className="active-indicator">
           <svg height="6" width="6">
             <circle cx="3" cy="3" r="3" fill="black" />
@@ -20,15 +20,22 @@ class Navlink extends Component {
       );
     }
 
-    return (
-      <span className="navbar-link">
-        <Link to={ this.props.url } style={(this.isActive()) ? {color:"black"} : {}}>
-          { this.props.text }
-        </Link>
-        { activeIndicator }
-      </span>
-    );
+    return null;
   }
+
+  return (
+    <span className="navbar-link">
+      <Link to={ url } style={ (isActive()) ? {color:"black"} : {} }>
+        { text }
+      </Link>
+      { activeIndicator() }
+    </span>
+  );
 }
+
+Navlink.propTypes = {
+  text: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+};
 
 export default Navlink;
