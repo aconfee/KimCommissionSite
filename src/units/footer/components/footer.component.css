@@ -9,7 +9,6 @@
 .column {
   width: 33.33%;
   height: 200px;
-  /*min-width: 480px;*/
 
   display: inline-block;
   position: relative;
@@ -26,6 +25,9 @@
   transform: translateY(-50%);
 }
 
+/* Small HD screen */
+
+
 .footer
 .column
 .social-column-container
@@ -35,6 +37,24 @@
 
   display: inline-block;
   margin-left: 50px;
+}
+
+@media only screen and (min-width: 900px) {
+  .footer
+  .column
+  .social-column-container
+  .logo {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer
+  .column
+  .social-column-container
+  .logo {
+    display: inline-block;
+  }
 }
 
 .footer
