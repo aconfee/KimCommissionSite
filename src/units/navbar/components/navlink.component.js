@@ -3,13 +3,18 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './navlink.component.css';
 
-const Navlink = ({text, url}) => {
+Navlink.propTypes = {
+  text: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
+};
+
+function Navlink({text, url}) {
 
   const isActive = () => {
     return window.location.pathname === url;
   }
 
-  const activeIndicator = () => {
+  const renderActiveIndicator = () => {
     if( isActive() ) {
       return (
         <div className="active-indicator">
@@ -28,14 +33,9 @@ const Navlink = ({text, url}) => {
       <Link to={ url } style={ (isActive()) ? {color:"black"} : {} }>
         { text }
       </Link>
-      { activeIndicator() }
+      { renderActiveIndicator() }
     </span>
   );
 }
-
-Navlink.propTypes = {
-  text: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
-};
 
 export default Navlink;

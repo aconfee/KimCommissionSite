@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Home extends Component {
   render() {
     return(
-      <h1>Home page</h1>
+      <h1 style={ {height:"800px"} }>Home page</h1>
     );
   }
 }
