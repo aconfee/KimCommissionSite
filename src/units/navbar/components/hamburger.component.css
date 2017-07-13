@@ -1,0 +1,46 @@
+.hamburger {
+  width: 35px;
+  height: 35px;
+
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  right: 60px;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.hamburger
+.hamburger-line {
+  /* Dimension */
+  width: 35px;
+  height: 2px;
+
+  /* Position */
+  margin-bottom: 10px;
+
+  /* Style */
+  background-color: #7D7E7E;
+  border-radius: 1px;
+
+  /* Effects */
+  -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.hamburger
+#top.hamburger-line.animate {
+  transform: rotate(45deg);
+}
+
+.hamburger
+#middle.hamburger-line.animate {
+  display: none;
+}
+
+.hamburger
+#bottom.hamburger-line.animate {
+  transform: rotate(-45deg);
+}
