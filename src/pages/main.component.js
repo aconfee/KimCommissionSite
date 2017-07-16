@@ -16,7 +16,7 @@ class Main extends Component {
   render(){
     return(
       <div>
-        { Navbar() }
+        <Navbar />
 
         <Route exact path="/" component={Home} />
         <Route path="/faq" component={Faq} />

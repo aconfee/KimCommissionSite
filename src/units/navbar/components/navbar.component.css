@@ -1,6 +1,49 @@
 .navbar {
   height: 135px;
-  width: 100%; }
+  width: 100%;
+}
+
+.navbar-background {
+  width: 100%;
+  height: 200px;
+
+  position: fixed;
+  top: -250px;
+
+  background-color: #FAF7F7;
+  opacity: 0;
+
+  -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.navbar-background.open {
+  top: 0px;
+
+  opacity: 1;
+}
+
+/* Open is not a function of desktop mode. Should have no affect. */
+@media only screen and (min-width: 800px) {
+  .navbar-background.open {
+    opacity: 0;
+  }
+}
+
+/* Elipse rounded bottom */
+.navbar-background.open div{
+  height: 100px;
+
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  transform: scaleX(1.2);
+  border-radius: 100%;
+  background-color: #FAF7F7;
+}
 
 .navbar
 .content {
@@ -8,7 +51,7 @@
   height: 75px;
   position: absolute;
   margin-top: 20px;
-  margin-left: 20px; }
+}
 
 /* Corresponds with hamburger */
 @media only screen and (min-width: 800px) {
@@ -25,6 +68,7 @@
   width: 40px;
   height: auto;
   margin-right: 50px;
+  margin-left: 20px;
   display: inline-block; }
 
 /* Corresponds with hamburger */
@@ -47,26 +91,16 @@
 .navbar
 .content
 .navbar-links-container {
-  display: none;
+  display: block;
   position: relative;
   margin-top: 40px;
 
   text-align: center;
-}
 
-.navbar
-.content
-.navbar-links-container.open {
-  display: block;
-}
+  opacity: 0;
 
-/* Open is not a function of desktop mode. Should have no affect. */
-@media only screen and (min-width: 800px) {
-  .navbar
-  .content
-  .navbar-links-container.open {
-    display: inline-block;
-  }
+  -webkit-transition: 0.2s;
+    transition: 0.2s;
 }
 
 /* Corresponds with hamburger */
@@ -79,9 +113,16 @@
     position: absolute;
     padding-top: 28px;
     padding-bottom: 29px;
-
     margin: 0;
 
     text-align: left;
+
+    opacity: 1;
   }
+}
+
+.navbar
+.content
+.navbar-links-container.open {
+  opacity: 1;
 }
