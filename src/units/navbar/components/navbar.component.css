@@ -48,16 +48,40 @@
 .content
 .navbar-links-container {
   display: none;
+  position: relative;
+  margin-top: 40px;
+
+  text-align: center;
+}
+
+.navbar
+.content
+.navbar-links-container.open {
+  display: block;
+}
+
+/* Open is not a function of desktop mode. Should have no affect. */
+@media only screen and (min-width: 800px) {
+  .navbar
+  .content
+  .navbar-links-container.open {
+    display: inline-block;
+  }
 }
 
 /* Corresponds with hamburger */
+/* This is still hidden. Apply .open */
 @media only screen and (min-width: 800px) {
   .navbar
   .content
   .navbar-links-container {
+    display: inline-block;
+    position: absolute;
     padding-top: 28px;
     padding-bottom: 29px;
-    position: absolute;
-    display: inline-block;
+
+    margin: 0;
+
+    text-align: left;
   }
 }
