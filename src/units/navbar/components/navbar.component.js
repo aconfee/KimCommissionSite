@@ -31,7 +31,7 @@ class Navbar extends Component {
         </div>
         <div className="navbar ">
           <div className="content">
-            <Link to="/">
+            <Link to="/" onClick={ this.handleLinkClick }>
               <img className="navbar-logo" src="./images/logo.jpg" alt="kimbyarting logo" title="kimbyarting logo" />
             </Link>
             <div className={ "navbar-links-container " + this.animateOpen() } onClick={ this.handleLinkClick }>
@@ -39,7 +39,7 @@ class Navbar extends Component {
               { Navlink({ text: "WORK", url: "/work" }) }
               { Navlink({ text: "CONTACT", url: "/contact" }) }
             </div>
-            <Hamburger onClick={ this.handleHamburgerClick } isOpen={ this.state.isOpen }/>
+            <Hamburger isOpen={ this.state.isOpen } onClick={ this.handleHamburgerClick }/>
           </div>
         </div>
       </div>

@@ -52,13 +52,13 @@
 }
 
 .hamburger
-.line.animate {
+.animate {
   animation-duration: 0.15s;
   animation-timing-function: ease-in;
 }
 
 .hamburger
-.line.hide {
+.hide {
   display: none;
 }
 

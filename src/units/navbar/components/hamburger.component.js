@@ -1,28 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import './hamburger.component.css';
 
-class Hamburger extends Component {
-  animateHamburger = () => {
-    return this.props.isOpen ? "animate" : "hide";
+Hamburger.propTypes = {
+  isOpen: PropTypes.string.isRequired
+};
+
+function Hamburger({ isOpen, onClick }) {
+
+  const animateHamburger = () => {
+    return isOpen ? "animate" : "hide";
   }
 
-  animateCross = () => {
-    return this.props.isOpen ? "hide" : "animate";
+  const animateCross = () => {
+    return isOpen ? "hide" : "animate";
   }
 
-  render() {
-    return (
-      <div className="hamburger" onClick={ this.props.onClick }>
-        <div id="top-burger" className={ "line top " + this.animateHamburger() }></div>
-        <div id="middle-burger" className={ "line middle " + this.animateHamburger() }></div>
-        <div id="bottom-burger" className={ "line bottom " + this.animateHamburger() }></div>
+  return (
+    <div className="hamburger" onClick={ onClick }>
+      <div id="top-burger" className={ "line top " + animateHamburger() }></div>
+      <div id="middle-burger" className={ "line middle " + animateHamburger() }></div>
+      <div id="bottom-burger" className={ "line bottom " + animateHamburger() }></div>
 
-        <div id="top-cross" className={ "line top " + this.animateCross() }></div>
-        <div id="middle-cross" className={ "line middle " + this.animateCross() }></div>
-        <div id="bottom-cross" className={ "line bottom " + this.animateCross() }></div>
-      </div>
-    );
-  }
+      <div id="top-cross" className={ "line top " + animateCross() }></div>
+      <div id="middle-cross" className={ "line middle " + animateCross() }></div>
+      <div id="bottom-cross" className={ "line bottom " + animateCross() }></div>
+    </div>
+  );
 }
 
 export default Hamburger;
