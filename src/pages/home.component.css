@@ -1,0 +1,25 @@
+.background {
+  width: 100%;
+  height: 80%;
+
+  position: absolute;
+  z-index: -1;
+  top: 0;
+
+  background-color: #FAF7F7;
+}
+
+/* Elipse rounded bottom */
+.background div{
+  height: 100px;
+
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  transform: scaleX(1.2);
+  border-radius: 100%;
+  background-color: #FAF7F7;
+}

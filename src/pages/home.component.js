@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import Landing from '../units/landing/components/landing.component.js';
+import './home.component.css';
 
 class Home extends Component {
   render() {
     return(
-      <h1 style={ {height:"800px"} }>Home page</h1>
+      <div>
+        <div className="background">
+          <div></div>
+        </div>
+        <Landing />
+      </div>
     );
   }
 }

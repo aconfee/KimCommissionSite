@@ -1,0 +1,74 @@
+.section {
+  display: block;
+  position: relative;
+}
+
+.section
+p {
+  margin: 0;
+}
+
+.section
+.row {
+  display: block;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.section
+.row
+.column-half {
+  width: 50%;
+  height: auto;
+
+  display: inline-block;
+
+  vertical-align: top;
+}
+
+.center {
+  text-align: center;
+}
+
+#title {
+  position: relative;
+
+  font-size: 50px;
+}
+
+#subtitle {
+  position: relative;
+  left: -64px;
+  top: 11px;
+  font-size: 18px;
+}
+
+.title-container {
+  width: 100%;
+  transform: translateY(100%);
+}
+
+.details-container {
+  width: 75%;
+  max-width: 75%;
+}
+
+.details-container
+p {
+  margin-bottom: 30px;
+}
+
+.details-container :last-child {
+  margin-top: 70px;
+}
+
+.kim-cover {
+  max-width: 100%;
+  height: auto;
+}
+
+.details-cover {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
