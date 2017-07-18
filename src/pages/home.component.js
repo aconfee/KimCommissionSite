@@ -7,9 +7,9 @@ class Home extends Component {
     return(
       <div>
         <div className="background">
-          <div></div>
+          <div className="elipse"></div>
         </div>
-        <Landing />
+        { Landing() }
       </div>
     );
   }

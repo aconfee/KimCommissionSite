@@ -41,7 +41,8 @@
 }
 
 /* Elipse rounded bottom */
-.navbar-background div{
+.navbar-background
+.elipse {
   height: 100px;
 
   position: absolute;

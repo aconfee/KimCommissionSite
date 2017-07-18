@@ -27,7 +27,7 @@ class Navbar extends Component {
     return (
       <div>
         <div className={ "navbar-background " + this.animateOpen() }>
-          <div></div>
+          <div className="elipse"></div>
         </div>
         <div className="navbar ">
           <div className="content">

@@ -10,7 +10,8 @@
 }
 
 /* Elipse rounded bottom */
-.background div{
+.background
+.elipse {
   height: 100px;
 
   position: absolute;
