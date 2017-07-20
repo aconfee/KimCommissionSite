@@ -18,12 +18,20 @@ p {
 .section
 .row
 .column-half {
-  width: 50%;
+  width: 100%;
   height: auto;
 
   display: inline-block;
 
   vertical-align: top;
+}
+
+@media only screen and (min-width: 800px) {
+  .section
+  .row
+  .column-half {
+    width: 50%;
+  }
 }
 
 .center {
@@ -45,16 +53,40 @@ p {
 
 .title-container {
   width: 100%;
-  transform: translateY(100%);
+  transform: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .title-container {
+    transform: translateY(100%);
+  }
 }
 
 .details-container {
-  width: 75%;
-  max-width: 75%;
+  width: 58%;
+  max-width: 58%;
+
+  text-align: left;
+
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 800px) {
+  .details-container {
+    left: inherit;
+    right: inherit;
+    margin: inherit;
+
+    margin-top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .details-container
 p {
+  text-align: left;
   margin-bottom: 30px;
 }
 
@@ -65,10 +97,39 @@ p {
 .kim-cover {
   max-width: 100%;
   height: auto;
+  text-align: center;
+}
+
+.kim-cover
+img {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  .kim-cover {
+    max-width: 90%;
+    text-align: left;
+  }
+
+  .kim-cover
+  img {
+    max-width: 90%;
+  }
 }
 
 .details-cover {
+  display: none;
+
   max-width: 500px;
   width: 100%;
   height: auto;
+
+  margin-top: 50%;
+  transform: translateY(-50%);
+}
+
+@media only screen and (min-width: 800px) {
+  .details-cover {
+    display: inline-block;
+  }
 }
