@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './hamburger.component.css';
 
 Hamburger.propTypes = {
-  isOpen: PropTypes.string.isRequired
+  isOpen: PropTypes.bool.isRequired
 };
 
 function Hamburger({ isOpen, onClick }) {

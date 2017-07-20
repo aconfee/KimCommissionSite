@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Landing from '../units/landing/components/landing.component.js';
 import './home.component.css';
+
+import Landing from '../units/landing/components/landing.component.js';
+import OptionButtons from '../units/optionSelector/components/optionButtons.component.js';
 
 class Home extends Component {
   render() {
@@ -10,6 +12,7 @@ class Home extends Component {
           <div className="elipse"></div>
         </div>
         { Landing() }
+        <OptionButtons />
       </div>
     );
   }
