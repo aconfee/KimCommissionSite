@@ -1,0 +1,22 @@
+.option-selector-container {
+  text-align: center;
+}
+
+.option-selector-container
+.description-text {
+  margin: 25px 0;
+}
+
+.option-selector-container
+.buttons-before {
+  position: relative;
+  bottom: 10px;
+  right: 10px;
+}
+
+.option-selector-container
+.buttons-after {
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+}

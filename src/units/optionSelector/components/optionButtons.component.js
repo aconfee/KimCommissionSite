@@ -23,17 +23,18 @@ class OptionButtons extends Component {
 
   render() {
     return (
-      <div>
-        <div className="option-buttons-container">
-          <OptionButton id={0} onClick={ this.handleClick } />
-          <OptionButton id={1} onClick={ this.handleClick } />
-          <OptionButton id={2} onClick={ this.handleClick } />
+      <div className="option-buttons-container">
+        { OptionButton({ id: 0, onClick: this.handleClick }) }
+        { OptionButton({ id: 1, onClick: this.handleClick }) }
+        { OptionButton({ id: 2, onClick: this.handleClick }) }
+        { OptionButton({ id: 3, onClick: this.handleClick }) }
+        { OptionButton({ id: 4, onClick: this.handleClick }) }
+        { OptionButton({ id: 5, onClick: this.handleClick }) }
 
-          <div className="blob animate" style={ this.state.activeIndicatorAnimation }></div>
-          <div className="blob blob2 animate" style={ this.state.activeIndicatorAnimation }></div>
-        </div>
+        <div className="blob animate" style={ this.state.activeIndicatorAnimation }></div>
+        <div className="blob blob2 animate" style={ this.state.activeIndicatorAnimation }></div>
 
-        <svg>
+        <svg className="goo-filter">
           <defs>
             <filter id="goo">
               <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './home.component.css';
 
 import Landing from '../units/landing/components/landing.component.js';
-import OptionButtons from '../units/optionSelector/components/optionButtons.component.js';
+import OptionSelectorContainer from '../units/optionSelector/components/optionSelectorContainer.component.js';
 
 class Home extends Component {
   render() {
@@ -12,7 +12,7 @@ class Home extends Component {
           <div className="elipse"></div>
         </div>
         { Landing() }
-        <OptionButtons />
+        <OptionSelectorContainer />
       </div>
     );
   }
