@@ -24,3 +24,8 @@
   border-radius: 100%;
   background-color: #FAF7F7;
 }
+
+.option-selectors {
+  position: relative;
+  top: -200px;
+}

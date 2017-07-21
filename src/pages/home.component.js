@@ -12,7 +12,9 @@ class Home extends Component {
           <div className="elipse"></div>
         </div>
         { Landing() }
-        <OptionSelectorContainer />
+        <div className="option-selectors">
+          <OptionSelectorContainer />
+        </div>
       </div>
     );
   }
