@@ -1,5 +1,27 @@
 .option-buttons-container {
-  width: 500px;
-  height: 100px;
-  border: 1px solid black;
+  position: relative;
+  display: inline-block;
+
+  filter:url(#goo);
+}
+
+.option-buttons-container
+.blob {
+  width: 30px;
+  height: 30px;
+  
+  position: absolute;
+  display: inline-block;
+  left: 11px;
+  top: 1px;
+
+  border-radius: 100%;
+  background: #e97b7a;
+
+  transition: ease 0.5s;
+}
+
+.option-buttons-container
+.blob2 {
+  transition-delay: 0.2s;
 }

@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import './optionButton.component.css';
 
-class OptionButton extends Component {
+OptionButton.propTypes = {
+  id: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired
+};
 
-  handleClick = () => {
-    this.props.onClick( this.props.id );
+function OptionButton({ id, onClick }) {
+
+  const handleClick = () => {
+    onClick( id );
   }
 
-  render() {
-    return (
-      <div className="button" onClick={ this.handleClick }></div>
-    );
-  }
+  return (
+    <div className="button" onClick={ handleClick }></div>
+  );
+
 }
 
 export default OptionButton;
