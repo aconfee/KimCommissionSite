@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import './optionButton.component.css';
 
 OptionButton.propTypes = {
-  id: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired
 };
 
-function OptionButton({ id, onClick }) {
+function OptionButton({ index, onClick }) {
 
   const handleClick = () => {
-    onClick( id );
+    onClick( index );
   }
 
   return (
-    <div className="button" onClick={ handleClick }></div>
+    <div key={ index } className="button" onClick={ handleClick }></div>
   );
 
 }

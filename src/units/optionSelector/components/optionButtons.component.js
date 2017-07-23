@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './optionButtons.component.css';
 import OptionButton from './optionButton.component.js';
 
@@ -7,32 +8,42 @@ class OptionButtons extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      activeIndex: 0,
-      activeIndicatorLocation: 0
-     };
+    this.state = { activeIndicatorLocation: 0 };
   }
 
-  handleClick = id => {
+  handleClick = nextIndex => {
     this.setState({
-      activeIndex: id,
       // 52 is tied to the sizes and margins defined in CSS.
-      activeIndicatorAnimation: { transform: "translateX(" + (id * 52) + "px" }
+      activeIndicatorAnimation: { transform: "translateX(" + (nextIndex * 52) + "px" }
     });
+
+    if(this.props.onClick) {
+      this.props.onClick(nextIndex);
+    }
+  }
+
+  renderButtons = () => {
+    let buttons = [];
+    for(let i = 0; i < this.props.length; i++) {
+      buttons.push( OptionButton({ index: i, onClick: this.handleClick}) );
+    }
+
+    return (
+      <span>
+        { buttons }
+      </span>
+    );
   }
 
   render() {
+    const { activeIndicatorAnimation } = this.state;
+
     return (
       <div className="option-buttons-container">
-        { OptionButton({ id: 0, onClick: this.handleClick }) }
-        { OptionButton({ id: 1, onClick: this.handleClick }) }
-        { OptionButton({ id: 2, onClick: this.handleClick }) }
-        { OptionButton({ id: 3, onClick: this.handleClick }) }
-        { OptionButton({ id: 4, onClick: this.handleClick }) }
-        { OptionButton({ id: 5, onClick: this.handleClick }) }
+        { this.renderButtons() }
 
-        <div className="blob animate" style={ this.state.activeIndicatorAnimation }></div>
-        <div className="blob blob2 animate" style={ this.state.activeIndicatorAnimation }></div>
+        <div className="blob animate" style={ activeIndicatorAnimation }></div>
+        <div className="blob blob2 animate" style={ activeIndicatorAnimation }></div>
 
         <svg className="goo-filter">
           <defs>
@@ -47,5 +58,10 @@ class OptionButtons extends Component {
     );
   }
 }
+
+OptionButtons.propTypes = {
+  length: PropTypes.number.isRequired,
+  onClick: PropTypes.func
+};
 
 export default OptionButtons;

@@ -2,62 +2,74 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './optionDisplay.component.css';
 
-PropTypes.OptionDisplay = {
-  images: PropTypes.arrayOf(PropTypes.string),
-  activeIndex: PropTypes.number
-}
-
 class OptionDisplay extends Component {
 
   constructor(props) {
     super(props);
 
-    const {
-      images,
-      activeIndex
-    } = this.props;
+    const { images, activeIndex } = this.props;
 
     this.state = {
       frontImageUrl: images[activeIndex],
-      backImageUrl: images[activeIndex + 1]
+      backImageUrl: images[activeIndex],
+      animationClass: ""
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    this.playAnimation();
+    this.playAnimation(nextProps);
 
-    setTimeout(function() {
-      this.resetAnimtion();
-    }.bind(this),
-    3000);
+    // 750 is tied to the flip animation duration.
+    setTimeout(function() { this.resetAnimtion(); }.bind(this), 750);
   }
 
-  playAnimation = () => {
-    console.log('playing animation');
+  playAnimation = (nextProps) => {
+    const { images, activeIndex } = this.props;
+
+    const animationClass = activeIndex < nextProps.activeIndex
+      ? "animate-flip-right"
+      : "animate-flip-left";
+
+    this.setState({
+      frontImageUrl: images[activeIndex],
+      backImageUrl: images[nextProps.activeIndex],
+      animationClass: animationClass
+    });
+
   }
 
   resetAnimtion = () => {
-    console.log('reseting animation');
+    const { images, activeIndex } = this.props;
+
+    this.setState({
+      frontImageUrl: images[activeIndex],
+      backImageUrl: images[activeIndex],
+      animationClass: ""
+    });
   }
 
   render() {
 
-    // This will all change. Will only use state.frontImageUrl and state.backImageUrl
-    // These states are modified in constructor and willReceiveProps/playanimation.
-    // shouldn't have to derive anything here.
+    const { animationClass, frontImageUrl, backImageUrl } = this.state;
+
     return (
       <div className="option-display-container">
-        <div className='flipable'>
-          <div className='front'>
-            <img className="display-image" src={ this.state.frontImageUrl } alt="level of detail display" title="level of detail display" />
+        <div className={ animationClass }>
+          <div className="front">
+            <img className="display-image" src={ frontImageUrl } alt="level of detail display" title="level of detail display" />
           </div>
-          <div className='back'>
-            <img className="display-image" src={ this.state.backImageUrl } alt="level of detail display" title="level of detail display" />
+          <div className="back">
+            <img className="display-image" src={ backImageUrl } alt="level of detail display" title="level of detail display" />
           </div>
         </div>
       </div>
     );
   }
+}
+
+OptionDisplay.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string),
+  activeIndex: PropTypes.number
 }
 
 export default OptionDisplay;
