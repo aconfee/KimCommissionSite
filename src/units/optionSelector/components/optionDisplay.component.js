@@ -68,8 +68,8 @@ class OptionDisplay extends Component {
 }
 
 OptionDisplay.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.string),
-  activeIndex: PropTypes.number
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  activeIndex: PropTypes.number.isRequired
 }
 
 export default OptionDisplay;

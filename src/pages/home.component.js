@@ -5,6 +5,13 @@ import Landing from '../units/landing/components/landing.component.js';
 import OptionSelectorContainer from '../units/optionSelector/components/optionSelectorContainer.component.js';
 
 class Home extends Component {
+  getImages = () => {
+   return [
+     "./images/logo.jpg",
+     "./images/details-cover.jpg"
+   ];
+ }
+
   render() {
     return(
       <div>
@@ -13,7 +20,7 @@ class Home extends Component {
         </div>
         { Landing() }
         <div className="option-selectors">
-          <OptionSelectorContainer />
+          <OptionSelectorContainer images={ this.getImages() } text="How much detail do you want?" />
         </div>
       </div>
     );
