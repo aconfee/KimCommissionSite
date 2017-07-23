@@ -20,7 +20,7 @@ class OptionDisplay extends Component {
     this.playAnimation(nextProps);
 
     // 750 is tied to the flip animation duration.
-    setTimeout(function() { this.resetAnimtion(); }.bind(this), 750);
+    this.timeoutId = setTimeout(function() { this.resetAnimtion(); }.bind(this), 750);
   }
 
   playAnimation = (nextProps) => {
@@ -46,6 +46,8 @@ class OptionDisplay extends Component {
       backImageUrl: images[activeIndex],
       animationClass: ""
     });
+
+    clearTimeout(this.timeoutId);
   }
 
   render() {
