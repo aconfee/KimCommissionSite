@@ -29,3 +29,7 @@
   position: relative;
   top: -200px;
 }
+
+.option-selector-container {
+  margin-bottom: 130px;
+}

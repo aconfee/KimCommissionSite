@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import './home.component.css';
 
+import IMAGE_SETS from '../constants/optionImageSets.js';
+
 import Landing from '../units/landing/components/landing.component.js';
 import OptionSelectorContainer from '../units/optionSelector/components/optionSelectorContainer.component.js';
 
 class Home extends Component {
-  getImages = () => {
-   return [
-     "./images/logo.jpg",
-     "./images/details-cover.jpg"
-   ];
- }
-
   render() {
     return(
       <div>
@@ -20,7 +15,10 @@ class Home extends Component {
         </div>
         { Landing() }
         <div className="option-selectors">
-          <OptionSelectorContainer images={ this.getImages() } text="How much detail do you want?" />
+          <OptionSelectorContainer images={ IMAGE_SETS.FRAME_SKETCH } text="How should it be framed?" />
+          <OptionSelectorContainer images={ IMAGE_SETS.LEVEL_OF_DETAIL_BUST } text="How much detail do you want?" />
+          <OptionSelectorContainer images={ IMAGE_SETS.BACKGROUND } text="What type of background do you want?" />
+          <OptionSelectorContainer images={ IMAGE_SETS.NUMBER_OF_CHARACTERS } text="How many characters do you want?" />
         </div>
       </div>
     );

@@ -56,7 +56,7 @@ class OptionDisplay extends Component {
 
     return (
       <div className="option-display-container">
-        <div className={ animationClass }>
+        <div className={ "flip-container " + animationClass }>
           <div className="front">
             <img className="display-image" src={ frontImageUrl } alt="level of detail display" title="level of detail display" />
           </div>
