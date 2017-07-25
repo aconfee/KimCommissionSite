@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './home.component.css';
-
+import { connect } from 'react-redux';
 import IMAGE_SETS from '../constants/optionImageSets.js';
-
 import Landing from '../units/landing/components/landing.component.js';
 import OptionSelectorContainer from '../units/optionSelector/components/optionSelectorContainer.component.js';
 
@@ -20,9 +19,18 @@ class Home extends Component {
           <OptionSelectorContainer images={ IMAGE_SETS.BACKGROUND } text="What type of background do you want?" />
           <OptionSelectorContainer images={ IMAGE_SETS.NUMBER_OF_CHARACTERS } text="How many characters do you want?" />
         </div>
+        <h1>{ this.props.customOptions }</h1>
       </div>
     );
   }
 }
 
-export default Home;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    customOptions: state.customOptions
+  };
+};
+
+export default connect(mapStateToProps)(Home);
+
+//export default Home;
