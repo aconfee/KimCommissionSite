@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './optionSelectorContainer.component.css';
-import OptionButtons from './optionButtons.component.js';
-import OptionDisplay from './optionDisplay.component.js';
+import './optionPicker.component.css';
+import RoundButtonGroup from './roundButtonGroup.component.js';
+import ImageCarouselCoinflip from './imageCarouselCoinflip.component.js';
 
-class OptionSelectorContainer extends Component {
+class OptionPicker extends Component {
 
   constructor(props) {
     super(props);
@@ -15,22 +15,26 @@ class OptionSelectorContainer extends Component {
   handleClick = (nextIndex) => {
     // Get index from buttons and change the display.
     this.setState({ activeIndex: nextIndex });
+
+    if(this.props.onClick) {
+      this.props.onClick();
+    }
   }
 
   render() {
 
-    const { images, text } = this.props;
+    const { images, text = "" } = this.props;
     const { activeIndex } = this.state;
 
     return (
       <div className="option-selector-container">
 
-        <OptionDisplay images={ images } activeIndex={ activeIndex }/>
+        <ImageCarouselCoinflip images={ images } activeIndex={ activeIndex }/>
 
         <p className="font-size-small font-color-dark description-text">{ text }</p>
         <span className="font-size-small font-color-light buttons-before">$</span>
 
-        <OptionButtons length={ images.length } onClick={ this.handleClick }/>
+        <RoundButtonGroup length={ images.length } onClick={ this.handleClick }/>
 
         <span className="font-size-small font-color-light buttons-after">$$</span>
       </div>
@@ -38,9 +42,10 @@ class OptionSelectorContainer extends Component {
   }
 }
 
-OptionSelectorContainer.propTypes = {
+OptionPicker.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
-  text: PropTypes.string
+  text: PropTypes.string,
+  onClick: PropTypes.func
 }
 
-export default OptionSelectorContainer;
+export default OptionPicker;

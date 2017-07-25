@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './optionButtons.component.css';
-import OptionButton from './optionButton.component.js';
+import './roundButtonGroup.component.css';
+import RoundButton from './roundButton.component.js';
 
-class OptionButtons extends Component {
+class RoundButtonGroup extends Component {
 
   constructor(props) {
     super(props);
@@ -25,7 +25,7 @@ class OptionButtons extends Component {
   renderButtons = () => {
     let buttons = [];
     for(let i = 0; i < this.props.length; i++) {
-      buttons.push( OptionButton({ index: i, onClick: this.handleClick}) );
+      buttons.push( RoundButton({ index: i, onClick: this.handleClick}) );
     }
 
     return (
@@ -59,9 +59,9 @@ class OptionButtons extends Component {
   }
 }
 
-OptionButtons.propTypes = {
+RoundButtonGroup.propTypes = {
   length: PropTypes.number.isRequired,
   onClick: PropTypes.func
 };
 
-export default OptionButtons;
+export default RoundButtonGroup;

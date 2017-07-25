@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './optionDisplay.component.css';
+import './imageCarouselCoinflip.component.css';
 
-class OptionDisplay extends Component {
+class ImageCarouselCoinflip extends Component {
 
   constructor(props) {
     super(props);
@@ -69,9 +69,9 @@ class OptionDisplay extends Component {
   }
 }
 
-OptionDisplay.propTypes = {
+ImageCarouselCoinflip.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
   activeIndex: PropTypes.number.isRequired
 }
 
-export default OptionDisplay;
+export default ImageCarouselCoinflip;

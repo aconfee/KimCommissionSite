@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './optionButton.component.css';
+import './roundButton.component.css';
 
-OptionButton.propTypes = {
+RoundButton.propTypes = {
   index: PropTypes.number.isRequired,
   onClick: PropTypes.func.isRequired
 };
 
-function OptionButton({ index, onClick }) {
+function RoundButton({ index, onClick }) {
 
   const handleClick = () => {
     onClick( index );
@@ -19,4 +19,4 @@ function OptionButton({ index, onClick }) {
 
 }
 
-export default OptionButton;
+export default RoundButton;
