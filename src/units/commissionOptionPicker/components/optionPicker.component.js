@@ -17,7 +17,7 @@ class OptionPicker extends Component {
     this.setState({ activeIndex: nextIndex });
 
     if(this.props.onClick) {
-      this.props.onClick();
+      this.props.onClick(nextIndex);
     }
   }
 

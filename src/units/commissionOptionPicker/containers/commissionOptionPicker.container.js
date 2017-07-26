@@ -1,21 +1,25 @@
 import { connect } from 'react-redux';
 import { selectCommissionOption } from '../actions/commissionOption.action.js';
 import OptionPicker from '../components/optionPicker.component.js';
-import IMAGE_SETS from '../../../constants/optionImageSets.js';
 
 const mapStateToProps = (state, ownProps) => {
-  // TODO choose image set based on name. No picking images here,
-  // just get active image set straight from state. state.lodImageSet[ownProps.name].
-  // state.frameImageSet[ownProps.name].
+
+  let images = state.commissionCustomization.activeImageSets[ownProps.name];
+  if(!images) {
+    console.log('no state images, choosing local');
+    images = ownProps.images;
+  }
+
   return {
-    images: IMAGE_SETS.FRAME_SKETCH
+    images: images,
+    text: ownProps.text
   }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onClick: () => {
-      dispatch(selectCommissionOption(ownProps.name));
+    onClick: index => {
+      dispatch(selectCommissionOption(ownProps.name, index));
     }
   };
 };

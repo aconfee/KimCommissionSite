@@ -1,26 +1,44 @@
+import { OPTION_IMAGE_SETS, SELECTION_MATRIX } from '../constants/optionImageSets.js';
+import OPTION_NAMES from '../constants/optionNames.js';
+
 const defaultState = {
-  customCommission: "default from reducer"
+  activeImageSets: {
+    framing: OPTION_IMAGE_SETS.FRAME_SKETCH,
+    levelOfDetail: OPTION_IMAGE_SETS.LEVEL_OF_DETAIL_BUST
+  },
+  estimate: {
+    basePrice: 50,
+    levelOfDetail: 0,
+    framing: 0,
+    background: 0,
+    numberOfCharacters: "x1",
+    totalEstimate: 50
+  },
+  inputs: {
+    levelOfDetailIndex: 0, // Need to know about each to derive estimate.
+    framingIndex: 0,
+    asIsDiscount: false
+  }
 };
 
 const CommissionOptionsReducer = (state = defaultState, action) => {
 
-  // TODO set a default state -- default active image sets and
-  // prices.
-  // Do this first, then with active state in place, fix up the
-  // action and container to use the defaults. Make sure everything
-  // is working at this point before proceeding to update state.
-  // Go ahead and make LOD and framing containers that switch image
-  // sets. May as well hold off on making all containers until
-  // actually updating price.
-
-
-  // TODO with the action typ (selectOption) and option name,
-  // return the new state -- new prices and new active image sets.
   switch (action.type) {
-    case 'TEST':
+    case "FRAMING_SELECTED":
       return {
         ...state,
-        customCommission: action.name
+        activeImageSets: {
+          ...state.activeImageSets,
+          levelOfDetail: SELECTION_MATRIX[OPTION_NAMES.LEVEL_OF_DETAIL][action.index]
+        }
+      };
+    case "LEVEL_OF_DETAIL_SELECTED":
+      return {
+        ...state,
+        activeImageSets: {
+          ...state.activeImageSets,
+          framing: SELECTION_MATRIX[OPTION_NAMES.FRAMING][action.index]
+        }
       };
     default:
       return state;

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import CommissionOptionsReducer from './commissionOptionsReducer.reducer.js';
 
 const CommissionCustomizationStore = combineReducers({
-  customCommission: CommissionOptionsReducer
+  commissionCustomization: CommissionOptionsReducer
 });
 
 export default CommissionCustomizationStore;

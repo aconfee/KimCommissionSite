@@ -17,10 +17,17 @@ class ImageCarouselCoinflip extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.playAnimation(nextProps);
-
-    // 750 is tied to the flip animation duration.
-    this.timeoutId = setTimeout(function() { this.resetAnimtion(); }.bind(this), 750);
+    // If index changed, animate.
+    if(this.props.activeIndex !== nextProps.activeIndex){
+      this.playAnimation(nextProps);
+      this.timeoutId = setTimeout(function() { this.resetAnimtion(); }.bind(this), 750); // 750 is tied to the flip animation duration.
+    } else {
+      // If images changed (but not index), set.
+      this.setState({
+        frontImageUrl: nextProps.images[nextProps.activeIndex],
+        backImageUrl: nextProps.images[nextProps.activeIndex]
+      });
+    }
   }
 
   playAnimation = (nextProps) => {
