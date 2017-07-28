@@ -1,22 +1,17 @@
-import { OPTION_IMAGE_SETS, SELECTION_MATRIX } from '../constants/optionImageSets.js';
-import OPTION_NAMES from '../constants/optionNames.js';
+import { SELECT_COMMISSION_OPTION_ACTION_TYPES as ACTION_TYPES } from '../units/commissionOptionPicker/actions/commissionOptionPicker.action.js';
 
 const defaultState = {
-  activeImageSets: {
-    framing: OPTION_IMAGE_SETS.FRAME_SKETCH,
-    levelOfDetail: OPTION_IMAGE_SETS.LEVEL_OF_DETAIL_BUST
-  },
-  estimate: {
-    basePrice: 50,
-    levelOfDetail: 0,
-    framing: 0,
-    background: 0,
+  estimateViewModel: {
+    character: 0,
     numberOfCharacters: "x1",
-    totalEstimate: 50
+    background: 0,
+    totalEstimate: 0
   },
-  inputs: {
-    levelOfDetailIndex: 0, // Need to know about each to derive estimate.
+  selectedCommissionOptions: {
+    levelOfDetailIndex: 0,
     framingIndex: 0,
+    numberOfCharacters: 1,
+    backgroundIndex: 0,
     asIsDiscount: false
   }
 };
@@ -24,22 +19,12 @@ const defaultState = {
 const CommissionOptionsReducer = (state = defaultState, action) => {
 
   switch (action.type) {
-    case "FRAMING_SELECTED":
-      return {
-        ...state,
-        activeImageSets: {
-          ...state.activeImageSets,
-          levelOfDetail: SELECTION_MATRIX[OPTION_NAMES.LEVEL_OF_DETAIL][action.index]
-        }
-      };
-    case "LEVEL_OF_DETAIL_SELECTED":
-      return {
-        ...state,
-        activeImageSets: {
-          ...state.activeImageSets,
-          framing: SELECTION_MATRIX[OPTION_NAMES.FRAMING][action.index]
-        }
-      };
+    case ACTION_TYPES.FRAMING_SELECTED:
+      console.log('framing selected. index: ' + action.index);
+      return { ...state };
+    case ACTION_TYPES.LEVEL_OF_DETAIL_SELECTED:
+      console.log('detail selected. index: ' + action.index);
+      return { ...state };
     default:
       return state;
   }

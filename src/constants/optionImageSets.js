@@ -1,42 +1,15 @@
 const OPTION_IMAGE_SETS = {
-  FRAME_SKETCH: [
-    "./images/optionImageSets/frame_detail/bust_sketch.jpg",
-    "./images/optionImageSets/frame_detail/half_sketch.jpg",
-    "./images/optionImageSets/frame_detail/full_sketch.jpg"],
-  FRAME_FLAT: [
-    "./images/optionImageSets/frame_detail/bust_flat.jpg",
-    "./images/optionImageSets/frame_detail/half_flat.jpg",
-    "./images/optionImageSets/frame_detail/full_flat.jpg"
+  FRAMING: [
+    "./images/optionImageSets/frame/bust.jpg",
+    "./images/optionImageSets/frame/half.jpg",
+    "./images/optionImageSets/frame/full.jpg"
   ],
-  FRAME_PAINTERLY: [
-    "./images/optionImageSets/frame_detail/bust_painterly.jpg",
-    "./images/optionImageSets/frame_detail/half_painterly.jpg",
-    "./images/optionImageSets/frame_detail/full_painterly.jpg"
+  LEVEL_OF_DETAIL: [
+    "./images/optionImageSets/detail/sketch.jpg",
+    "./images/optionImageSets/detail/flat.jpg",
+    "./images/optionImageSets/detail/painterly.jpg",
+    "./images/optionImageSets/detail/illustrative.jpg"
   ],
-  FRAME_ILLUSTRATIVE: [
-    "./images/optionImageSets/frame_detail/bust_illustrative.jpg",
-    "./images/optionImageSets/frame_detail/half_illustrative.jpg",
-    "./images/optionImageSets/frame_detail/full_illustrative.jpg"
-  ],
-
-  LEVEL_OF_DETAIL_BUST: [
-    "./images/optionImageSets/frame_detail/bust_sketch.jpg",
-    "./images/optionImageSets/frame_detail/bust_flat.jpg",
-    "./images/optionImageSets/frame_detail/bust_painterly.jpg",
-    "./images/optionImageSets/frame_detail/bust_illustrative.jpg"],
-  LEVEL_OF_DETAIL_HALF_BODY: [
-    "./images/optionImageSets/frame_detail/half_sketch.jpg",
-    "./images/optionImageSets/frame_detail/half_flat.jpg",
-    "./images/optionImageSets/frame_detail/half_painterly.jpg",
-    "./images/optionImageSets/frame_detail/half_illustrative.jpg"
-  ],
-  LEVEL_OF_DETAIL_FULL_BODY: [
-    "./images/optionImageSets/frame_detail/full_sketch.jpg",
-    "./images/optionImageSets/frame_detail/full_flat.jpg",
-    "./images/optionImageSets/frame_detail/full_painterly.jpg",
-    "./images/optionImageSets/frame_detail/full_illustrative.jpg"
-  ],
-
   BACKGROUND: [
     "./images/optionImageSets/background/flat_color.jpg",
     "./images/optionImageSets/background/texture_pattern.jpg",
@@ -51,19 +24,4 @@ const OPTION_IMAGE_SETS = {
     "./images/optionImageSets/characters/fiveplus.jpg"]
 };
 
-const SELECTION_MATRIX = {
-  framing: [
-    OPTION_IMAGE_SETS.FRAME_SKETCH,
-    OPTION_IMAGE_SETS.FRAME_FLAT,
-    OPTION_IMAGE_SETS.FRAME_PAINTERLY,
-    OPTION_IMAGE_SETS.FRAME_ILLUSTRATIVE
-  ],
-  levelOfDetail: [
-    OPTION_IMAGE_SETS.LEVEL_OF_DETAIL_BUST,
-    OPTION_IMAGE_SETS.LEVEL_OF_DETAIL_HALF_BODY,
-    OPTION_IMAGE_SETS.LEVEL_OF_DETAIL_FULL_BODY
-  ]
-};
-
-export { SELECTION_MATRIX };
-export { OPTION_IMAGE_SETS };
+export default OPTION_IMAGE_SETS;

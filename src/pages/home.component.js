@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './home.component.css';
-import { OPTION_IMAGE_SETS } from '../constants/optionImageSets.js';
-import OPTION_NAMES from '../constants/optionNames.js';
+import IMAGES from '../constants/optionImageSets.js';
+import NAMES from '../constants/optionNames.js';
 import Landing from '../units/landing/components/landing.component.js';
 import CommissionOptionPicker from '../units/commissionOptionPicker/containers/commissionOptionPicker.container.js';
 
@@ -15,19 +15,24 @@ class Home extends Component {
         { Landing() }
         <div className="option-selectors">
           <CommissionOptionPicker
-            name={ OPTION_NAMES.FRAMING }
-            text="How should it be framed?" />
+            name={ NAMES.FRAMING }
+            text="How should it be framed?"
+            images={ IMAGES.FRAMING } />
+
           <CommissionOptionPicker
-            name={ OPTION_NAMES.LEVEL_OF_DETAIL }
-            text="How much detail do you want?" />
+            name={ NAMES.LEVEL_OF_DETAIL }
+            text="How much detail do you want?"
+            images={ IMAGES.LEVEL_OF_DETAIL } />
+
           <CommissionOptionPicker
-            name={ OPTION_NAMES.BACKGROUND }
+            name={ NAMES.BACKGROUND }
             text="What type of background do you want?"
-            images={ OPTION_IMAGE_SETS.BACKGROUND } />
+            images={ IMAGES.BACKGROUND } />
+
           <CommissionOptionPicker
-            name={ OPTION_NAMES.NUMBER_OF_CHARACTERS }
+            name={ NAMES.NUMBER_OF_CHARACTERS }
             text="How many characters do you want?"
-            images={ OPTION_IMAGE_SETS.NUMBER_OF_CHARACTERS } />
+            images={ IMAGES.NUMBER_OF_CHARACTERS } />
         </div>
       </div>
     );
