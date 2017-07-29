@@ -15,24 +15,24 @@ class Home extends Component {
         { Landing() }
         <div className="option-selectors">
           <CommissionOptionPicker
-            name={ NAMES.FRAMING }
-            text="How should it be framed?"
-            images={ IMAGES.FRAMING } />
-
-          <CommissionOptionPicker
             name={ NAMES.LEVEL_OF_DETAIL }
             text="How much detail do you want?"
             images={ IMAGES.LEVEL_OF_DETAIL } />
 
           <CommissionOptionPicker
-            name={ NAMES.BACKGROUND }
-            text="What type of background do you want?"
-            images={ IMAGES.BACKGROUND } />
+            name={ NAMES.FRAMING }
+            text="How should it be framed?"
+            images={ IMAGES.FRAMING } />
 
           <CommissionOptionPicker
             name={ NAMES.NUMBER_OF_CHARACTERS }
             text="How many characters do you want?"
             images={ IMAGES.NUMBER_OF_CHARACTERS } />
+
+          <CommissionOptionPicker
+            name={ NAMES.BACKGROUND }
+            text="What type of background do you want?"
+            images={ IMAGES.BACKGROUND } />
         </div>
       </div>
     );

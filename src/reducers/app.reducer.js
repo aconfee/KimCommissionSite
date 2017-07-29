@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import CommissionOptionsReducer from './commissionOptionsReducer.reducer.js';
+import estimateReducer from './estimate.reducer.js';
 
 const CommissionCustomizationStore = combineReducers({
-  commissionCustomization: CommissionOptionsReducer
+  estimate: estimateReducer
 });
 
 export default CommissionCustomizationStore;

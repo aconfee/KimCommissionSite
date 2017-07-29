@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import CommissionCustomizationStore from './reducers/index.js';
+import CommissionCustomizationStore from './reducers/app.reducer.js';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
