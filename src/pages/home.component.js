@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import './home.component.css';
+
 import IMAGES from '../constants/optionImageSets.js';
 import NAMES from '../constants/optionNames.js';
+
 import Landing from '../units/landing/components/landing.component.js';
 import CommissionOptionPicker from '../units/commissionOptionPicker/containers/commissionOptionPicker.container.js';
+import ItemizedCommissionEstimate from '../units/estimate/containers/itemizedCommissionEstimate.container.js';
 
 class Home extends Component {
   render() {
@@ -14,6 +17,9 @@ class Home extends Component {
         </div>
         { Landing() }
         <div className="option-selectors">
+
+          <ItemizedCommissionEstimate />
+
           <CommissionOptionPicker
             name={ NAMES.LEVEL_OF_DETAIL }
             text="How much detail do you want?"
