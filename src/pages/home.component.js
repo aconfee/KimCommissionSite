@@ -6,7 +6,7 @@ import NAMES from '../constants/optionNames.js';
 
 import Landing from '../units/landing/components/landing.component.js';
 import CommissionOptionPicker from '../units/commissionOptionPicker/containers/commissionOptionPicker.container.js';
-import ItemizedCommissionEstimate from '../units/estimate/containers/itemizedCommissionEstimate.container.js';
+import DesktopCommissionEstimate from '../units/estimate/containers/desktopCommissionEstimate.container.js';
 
 class Home extends Component {
   render() {
@@ -18,7 +18,7 @@ class Home extends Component {
         { Landing() }
         <div className="option-selectors">
 
-          <ItemizedCommissionEstimate />
+          <DesktopCommissionEstimate />
 
           <CommissionOptionPicker
             name={ NAMES.LEVEL_OF_DETAIL }

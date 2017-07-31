@@ -2,15 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './itemizedEstimate.component.css';
 
-function ItemizedEstimate({ estimate } /* items, total */) {
+ItemizedEstimate.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    displayValue: PropTypes.string
+  })).isRequired,
+  total: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+};
+
+function ItemizedEstimate({ items, total }) {
+
+  const renderItems = () => {
+    return items.map((item, index) => {
+      return (
+        <div key={ index } className="item-container">
+          <div className="label">{ item.label }</div>
+          <div className="value">{ item.displayValue }</div>
+        </div>);
+    });
+  };
+
   return (
-    <div className="itemized-estimate-container">
-      <ul>
-        <li>Character: ${estimate.character}</li>
-        <li># of Characters: x{estimate.numberOfCharacters}</li>
-        <li>Background: ${estimate.background}</li>
-        <li>Total: ${estimate.total}</li>
-      </ul>
+    <div className="itemized-estimate-container font-size-small font-color-light">
+      <p className="title font-color-dark">Estimate</p>
+      <div className="item-group-container">
+        { renderItems() }
+      </div>
+      <p className="total font-color-dark">${ total }</p>
     </div>
   );
 }

@@ -1,5 +1,43 @@
 .itemized-estimate-container {
   display: inline-block;
-  position: fixed;
-  top: 0;
+  position: absolute;
+}
+
+.itemized-estimate-container
+.title {
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.itemized-estimate-container
+.item-container {
+  width: 200px;
+  margin: 2px 0;
+}
+
+.itemized-estimate-container
+.item-group-container {
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #95989A;
+}
+
+.itemized-estimate-container
+.label {
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+}
+
+.itemized-estimate-container
+.value {
+  display: inline-block;
+  width: 50px;
+  text-align: right;
+}
+
+.itemized-estimate-container
+.total {
+  font-weight: bold;
+  text-align: right;
+  margin: 15px 0;
 }
