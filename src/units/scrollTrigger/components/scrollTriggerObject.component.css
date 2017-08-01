@@ -1,0 +1,18 @@
+.debug {
+  border-top: 2px solid red;
+  border-bottom: 2px solid blue;
+}
+
+.start-debug {
+  border: 2px solid red;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+.end-debug {
+  border: 2px solid blue;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
