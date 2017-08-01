@@ -9,14 +9,15 @@
 
 .above-boundry {
   top: 124px;
-  bottom: inherit;
+  bottom: auto;
 }
 
 .below-boundry {
-  bottom: 234px;
-  top:inherit;
+  bottom: 229px;
+  top:auto;
 }
 
 .stick {
   position: fixed;
+  bottom: auto;
 }

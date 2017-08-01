@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import './commissionEstimate.container.css';
-import StickyResponsiveEstimate from '../components/stickyResponsiveEstimate.component.js';
+import StickyEstimateDesktop from '../components/stickyEstimateDesktop.component.js';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -22,9 +22,12 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
+// TODO: Can check if mobile or not right here and set correct object to map container to.
+// StickyEstimateMobile and StickyEstimateDesktop.
+
 const CommissionEstimate = connect(
   mapStateToProps,
   null
-)(StickyResponsiveEstimate);
+)(StickyEstimateDesktop);
 
 export default CommissionEstimate;
