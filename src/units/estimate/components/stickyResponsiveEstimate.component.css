@@ -1,0 +1,22 @@
+.desktop-estimate {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  position: absolute;
+  left: 75%;
+  top: 125px;
+}
+
+.above-boundry {
+  top: 124px;
+  bottom: inherit;
+}
+
+.below-boundry {
+  bottom: 234px;
+  top:inherit;
+}
+
+.stick {
+  position: fixed;
+}

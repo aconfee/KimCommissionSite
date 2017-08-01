@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import './desktopCommissionEstimate.container.css';
-import StickyCommissionEstimate from '../components/stickyCommissionEstimate.component.js';
+import './commissionEstimate.container.css';
+import StickyResponsiveEstimate from '../components/stickyResponsiveEstimate.component.js';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -22,9 +22,9 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const DesktopCommissionEstimate = connect(
+const CommissionEstimate = connect(
   mapStateToProps,
   null
-)(StickyCommissionEstimate);
+)(StickyResponsiveEstimate);
 
-export default DesktopCommissionEstimate;
+export default CommissionEstimate;
