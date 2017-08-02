@@ -7,7 +7,7 @@ import NAMES from '../constants/optionNames.js';
 import Landing from '../units/landing/components/landing.component.js';
 import CommissionOptionPicker from '../units/commissionOptionPicker/containers/commissionOptionPicker.container.js';
 import CommissionEstimate from '../units/estimate/containers/commissionEstimate.container.js';
-import ScrollTriggerObject from '../units/scrollTrigger/components/scrollTriggerObject.component.js';
+import EstimateScrollTrigger from '../units/scrollTrigger/components/estimateScrollTrigger.component.js';
 
 class Home extends Component {
   render() {
@@ -18,10 +18,11 @@ class Home extends Component {
         </div>
         { Landing() }
 
-        <ScrollTriggerObject startTriggerY={200} endTriggerY={600}>
+        <div className="option-selectors">
         
-          <div className="option-selectors">
-            <CommissionEstimate />
+          <CommissionEstimate />
+
+          <EstimateScrollTrigger>
 
             <CommissionOptionPicker
               name={ NAMES.LEVEL_OF_DETAIL }
@@ -38,12 +39,13 @@ class Home extends Component {
               text="How many characters do you want?"
               images={ IMAGES.NUMBER_OF_CHARACTERS } />
 
-            <CommissionOptionPicker
-              name={ NAMES.BACKGROUND }
-              text="What type of background do you want?"
-              images={ IMAGES.BACKGROUND } />
-          </div>
-        </ScrollTriggerObject>
+          </EstimateScrollTrigger>
+
+          <CommissionOptionPicker
+            name={ NAMES.BACKGROUND }
+            text="What type of background do you want?"
+            images={ IMAGES.BACKGROUND } />
+        </div>
       </div>
     );
   }
