@@ -16,6 +16,19 @@ class EstimateScrollTrigger extends Component {
 
   initScrollTriggerElement = ref => {
     this.$el = ref;
+  };
+
+  componentDidMount = () => {
+    this.updateTriggerPositions();
+    window.addEventListener("resize", this.updateTriggerPositions);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.updateTriggerPositions);
+  };
+
+  updateTriggerPositions = () => {
+    console.log("updating trigger positions on resize");
     const startTriggerY = (window.innerHeight / 2) - 225;
     const endTriggerY = startTriggerY - 130;
 

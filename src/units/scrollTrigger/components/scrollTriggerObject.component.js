@@ -14,7 +14,11 @@ class ScrollTriggerObject extends Component {
 
   initScrollTriggerElement = ref => {
     this.$el = ref;
-    window.addEventListener('scroll', this.update);
+    window.addEventListener("scroll", this.update);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener("scroll", this.update);
   };
 
   update = () => {
