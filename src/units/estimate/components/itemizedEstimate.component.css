@@ -1,43 +1,115 @@
 .itemized-estimate-container {
-  display: inline-block;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  background-color: #EDEDED;
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+  z-index: 2;
+}
+
+@media only screen and (min-width: 1000px) {
+  .itemized-estimate-container {
+    display: inline-block;
+    position: absolute;
+    background-color: inherit;
+    padding: 0;
+    width: auto;
+    height: auto;
+    z-index: inherit;
+  }
 }
 
 .itemized-estimate-container
 .title {
   font-weight: bold;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+  width:130px;
+  margin-left: 25%;
+  transform: translateX(-50%);
+}
+
+@media only screen and (min-width: 1000px) {
+  .itemized-estimate-container
+  .title {
+    margin-bottom: 50px;
+    width: inherit;
+    margin-left: 0;
+    transform: none;
+  }
 }
 
 .itemized-estimate-container
 .item-container {
-  width: 200px;
+  width: 130px;
   margin: 2px 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  .itemized-estimate-container
+  .item-container {
+    width: 200px;
+    margin: 2px 0;
+  }
 }
 
 .itemized-estimate-container
 .item-group-container {
-  padding-bottom: 15px;
-  border-bottom: 1px dashed #95989A;
+  width:130px;
+  font-size: 12px;
+  padding: 0;
+  border: none;
+  margin-left: 25%;
+  transform: translateX(-50%);
+}
+
+@media only screen and (min-width: 1000px) {
+  .itemized-estimate-container
+  .item-group-container {
+    font-size: 16px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #95989A;
+    width: inherit;
+    margin-left: 0;
+    transform: none;
+  }
 }
 
 .itemized-estimate-container
 .label {
   display: inline-block;
-  width: 150px;
-  text-align: left;
 }
 
 .itemized-estimate-container
 .value {
   display: inline-block;
-  width: 50px;
-  text-align: right;
+  float: right;
 }
 
 .itemized-estimate-container
 .total {
-  font-weight: bold;
-  text-align: right;
-  margin: 15px 0;
+  display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+  .itemized-estimate-container
+  .total {
+    font-weight: bold;
+    text-align: right;
+    margin: 15px 0;
+    display: inherit;
+  }
+}
+
+.itemized-estimate-container
+.mobile-total {
+  display: inline-block;
+  float: right;
+}
+
+@media only screen and (min-width: 1000px) {
+  .itemized-estimate-container
+  .mobile-total {
+    display: none;
+  }
 }

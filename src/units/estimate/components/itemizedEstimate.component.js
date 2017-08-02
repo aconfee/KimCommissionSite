@@ -24,7 +24,7 @@ function ItemizedEstimate({ items, total }) {
 
   return (
     <div className="itemized-estimate-container font-size-small font-color-light">
-      <p className="title font-color-dark">Estimate</p>
+      <p className="title font-color-dark">Estimate<span className="mobile-total">${ total }</span></p>
       <div className="item-group-container">
         { renderItems() }
       </div>
