@@ -42,7 +42,7 @@ class ScrollTriggerObject extends Component {
       this.isTriggered = isTriggered;
       this.isBeforeTrigger = isBeforeTrigger;
       this.isPastTrigger = isPastTrigger;
-      
+
       onTrigger(isTriggered, isBeforeTrigger, isPastTrigger);
     }
   };
@@ -73,6 +73,10 @@ ScrollTriggerObject.propTypes = {
   endTriggerY: PropTypes.number.isRequired,
   onTrigger: PropTypes.func.isRequired,
   debug: PropTypes.bool
+};
+
+ScrollTriggerObject.defaultProps = {
+  debug: false
 };
 
 export default ScrollTriggerObject;

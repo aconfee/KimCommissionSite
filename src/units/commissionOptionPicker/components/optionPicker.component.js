@@ -46,6 +46,11 @@ OptionPicker.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
   text: PropTypes.string,
   onClick: PropTypes.func
-}
+};
+
+OptionPicker.defaultProps = {
+  text: "",
+  onClick: null
+};
 
 export default OptionPicker;

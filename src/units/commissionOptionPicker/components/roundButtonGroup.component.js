@@ -64,4 +64,8 @@ RoundButtonGroup.propTypes = {
   onClick: PropTypes.func
 };
 
+RoundButtonGroup.defaultProps = {
+  onClick: null
+};
+
 export default RoundButtonGroup;
