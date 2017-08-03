@@ -24,9 +24,11 @@
   background: #e97b7a;
 
   transition: ease 0.5s;
+  -webkit-transition: ease 0.5s;
 }
 
 .option-buttons-container
 .blob2 {
   transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
 }

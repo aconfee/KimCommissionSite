@@ -27,10 +27,13 @@ class EstimateScrollTrigger extends Component {
     window.removeEventListener("resize", this.updateTriggerPositions);
   };
 
+  isDesktop = () => {
+    return window.innerWidth >= 1000;
+  }
+
   updateTriggerPositions = () => {
-    console.log("updating trigger positions on resize");
-    const startTriggerY = (window.innerHeight / 2) - 225;
-    const endTriggerY = startTriggerY - 130;
+    const startTriggerY = this.isDesktop() ? (window.innerHeight / 2) - 225 : (window.innerHeight / 2);
+    const endTriggerY = this.isDesktop() ? startTriggerY - 130 : 0;
 
     this.setState({
       startTriggerY,

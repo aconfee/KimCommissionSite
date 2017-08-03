@@ -10,7 +10,7 @@ ItemizedEstimate.propTypes = {
   total: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
 };
 
-function ItemizedEstimate({ items, total }) {
+function ItemizedEstimate({ items, total, show }) {
 
   const renderItems = () => {
     return items.map((item, index) => {
@@ -23,7 +23,7 @@ function ItemizedEstimate({ items, total }) {
   };
 
   return (
-    <div className="itemized-estimate-container font-size-small font-color-light">
+    <div className="itemized-estimate-container font-size-small font-color-light ">
       <p className="title font-color-dark">Estimate<span className="mobile-total">${ total }</span></p>
       <div className="item-group-container">
         { renderItems() }

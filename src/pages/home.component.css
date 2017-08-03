@@ -27,6 +27,7 @@
 
 .option-selectors {
   position: relative;
+  z-index: 1;
 }
 
 .option-selector-container {
