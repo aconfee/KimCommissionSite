@@ -6,6 +6,7 @@ const { FRAMING_SELECTED, LEVEL_OF_DETAIL_SELECTED, NUMBER_OF_CHARACTERS_SELECTE
 const initialState = {
     detailIndex: 0,
     framingIndex: 0,
+    backgroundIndex: 0,
     character: PRICING.character[0][0],
     numberOfCharacters: 1,
     background: PRICING.background[0],
@@ -49,6 +50,7 @@ const selectNumberOfCharacters = (estimateState, action) => {
 const selectBackround = (estimateState, action) => {
   const background = PRICING.background[action.index];
   return updateObject(estimateState, {
+    backgroundIndex: action.index,
     background,
     total: updateTotalEstimate(estimateState, null, null, background)
   });

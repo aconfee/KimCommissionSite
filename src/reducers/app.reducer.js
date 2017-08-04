@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import estimateReducer from './estimate.reducer.js';
 import triggersReducer from './triggers.reducer.js';
+import commissionApiReducer from './commissionApi.reducer.js';
 
 const CommissionCustomizationStore = combineReducers({
   estimate: estimateReducer,
-  triggers: triggersReducer
+  triggers: triggersReducer,
+  commissionApi: commissionApiReducer
 });
 
 export default CommissionCustomizationStore;
