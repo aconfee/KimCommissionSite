@@ -8,7 +8,6 @@ const initialState = {
 const submitInquery = (commissionApiState, action) => {
 
   const { status, statusText, data } = action.payload;
-  console.log(data.message);
 
   return updateObject(commissionApiState, { inqueryResponse: {
     status, statusText, data

@@ -13,7 +13,7 @@ const backgroundTitles = [
 ];
 
 export const submitInquery = (senderDetails, commissionDetails) => {
-  const url = '/api/contact';
+  const url = '/api/contact/inquiry';
 
   const commissionDetailsText = {
     ...commissionDetails,
