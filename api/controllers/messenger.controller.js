@@ -1,13 +1,18 @@
 'use strict';
 const nodemailer = require('nodemailer');
 
+const smtpPassword = process.env.SMTP_PASSWORD;
+if(!smtpPassword) {
+  console.error("Please set environment variable SMTP_PASSWORD for email messenger.");
+}
+
 let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     secure: false, // secure:true for port 465, secure:false for port 587
     auth: {
         user: "adamestela@gmail.com",
-        pass: ""
+        pass: smtpPassword
     }
 });
 
