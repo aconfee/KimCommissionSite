@@ -8,7 +8,7 @@ import Landing from '../units/landing/components/landing.component.js';
 import CommissionOptionPicker from '../units/commissionOptionPicker/containers/commissionOptionPicker.container.js';
 import CommissionEstimate from '../units/estimate/containers/commissionEstimate.container.js';
 import EstimateScrollTrigger from '../units/scrollTrigger/components/estimateScrollTrigger.component.js';
-import InqueryFormContainer from '../units/form/containers/inqueryForm.container.js';
+import InquiryFormContainer from '../units/form/containers/inquiryForm.container.js';
 
 class Home extends Component {
   render() {
@@ -49,7 +49,7 @@ class Home extends Component {
 
         </div>
 
-        <InqueryFormContainer />
+        <InquiryFormContainer />
 
       </div>
     );

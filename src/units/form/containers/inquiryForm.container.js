@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { submitInquery } from '../actions/inqueryForm.action.js';
-import InqueryForm from '../components/inqueryForm.component.js';
+import { submitInquery } from '../actions/inquiryForm.action.js';
+import InqueryForm from '../components/inquiryForm.component.js';
 
 const mapStateToProps = (state, ownProps) => {
   return {

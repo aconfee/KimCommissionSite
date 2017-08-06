@@ -1,5 +1,5 @@
 import { updateObject } from './reducerUtilities.js';
-import { SUBMIT_INQUERY_ACTION_TYPE } from '../units/form/actions/inqueryForm.action.js';
+import { SUBMIT_INQUERY_ACTION_TYPE } from '../units/form/actions/inquiryForm.action.js';
 
 const initialState = {
   inqueryResponse: {}
