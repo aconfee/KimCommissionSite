@@ -12,7 +12,8 @@ class InqueryForm extends Component {
       email: "",
       captcha: "",
       isMobile: this.isMobile(),
-      errors: ""
+      isSending: false,
+      errors: {}
     };
   };
 
@@ -22,6 +23,22 @@ class InqueryForm extends Component {
 
   componentWillUnmount = () => {
     window.removeEventListener("resize", this.update);
+  };
+
+  componentWillReceiveProps = (nextProps) => {
+    const { inquiryResponse } = nextProps
+
+    if(inquiryResponse.timestamp !== this.props.inquiryResponse.timestamp) {
+      if(inquiryResponse.status !== 200) {
+        this.setState({
+          isSending: false,
+          errors: { response: inquiryResponse.statusText }
+        });
+      } else {
+        // TODO Instead of sending error response, trigger animation.
+        this.setState({ isSending: false, errors: { response: "sent successfully!" } });
+      }
+    }
   };
 
   // Used for realtime window resizing.
@@ -58,6 +75,8 @@ class InqueryForm extends Component {
 
     if(Object.keys(errors).length > 0) return;
 
+    // TODO Use this to trigger loading icon. 
+    this.setState({ isSending: true });
     this.props.onSubmit(this.state, this.props.estimate);
   };
 
@@ -96,6 +115,7 @@ class InqueryForm extends Component {
           { this.renderInput("What is 2 + 3?", "text", "captcha", this.state.captcha, this.state.errors.captcha) }
           { this.renderErrors() }
           <input type="submit" value="SEND" />
+          <p>sending: { this.state.isSending ? "true" : "false" }</p>
         </form>
       </div>
     );

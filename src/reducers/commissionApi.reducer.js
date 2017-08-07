@@ -2,16 +2,26 @@ import { updateObject } from './reducerUtilities.js';
 import { SUBMIT_INQUERY_ACTION_TYPE } from '../units/form/actions/inquiryForm.action.js';
 
 const initialState = {
-  inqueryResponse: {}
+  inquiryResponse: {
+    timestamp: Date.now()
+  }
 };
 
 const submitInquery = (commissionApiState, action) => {
 
-  const { status, statusText, data } = action.payload;
+  let { status, statusText, data } = action.payload;
 
-  return updateObject(commissionApiState, { inqueryResponse: {
-    status, statusText, data
+  if(!status) {
+    status = 500;
+    statusText = "Oops! Something went wrong. Please reach out to me on Instagram or Facebook to let me know.";
+    data = null;
+  }
+
+  var thing = updateObject(commissionApiState, { inquiryResponse: {
+    status, statusText, data, timestamp: Date.now()
   }});
+
+  return thing;
 };
 
 const commissionApiReducer = (commissionApiState = initialState, action) => {

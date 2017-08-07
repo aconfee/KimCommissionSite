@@ -4,7 +4,8 @@ import InqueryForm from '../components/inquiryForm.component.js';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    estimate: state.estimate
+    estimate: state.estimate,
+    inquiryResponse: state.commissionApi.inquiryResponse
   };
 };
 
