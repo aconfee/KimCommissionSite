@@ -75,7 +75,7 @@ class InqueryForm extends Component {
 
     if(Object.keys(errors).length > 0) return;
 
-    // TODO Use this to trigger loading icon. 
+    // TODO Use this to trigger loading icon.
     this.setState({ isSending: true });
     this.props.onSubmit(this.state, this.props.estimate);
   };
@@ -102,6 +102,14 @@ class InqueryForm extends Component {
     });
   };
 
+  renderLoader = () => {
+    if(this.state.isSending) {
+      return (<div className="loader"></div>);
+    } else {
+      return (<input type="submit" value="SEND" />);
+    }
+  }
+
   render() {
     return (
       <div className="form-container">
@@ -114,8 +122,7 @@ class InqueryForm extends Component {
           { this.renderInput("Email", "email", "email", this.state.email, this.state.errors.email) }
           { this.renderInput("What is 2 + 3?", "text", "captcha", this.state.captcha, this.state.errors.captcha) }
           { this.renderErrors() }
-          <input type="submit" value="SEND" />
-          <p>sending: { this.state.isSending ? "true" : "false" }</p>
+          { this.renderLoader() }
         </form>
       </div>
     );
