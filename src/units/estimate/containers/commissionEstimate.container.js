@@ -23,9 +23,6 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-// TODO: Can check if mobile or not right here and set correct object to map container to.
-// DesktopCommissionEstimate and MobileCommissionEstimate.
-
 const CommissionEstimate = connect(
   mapStateToProps,
   null

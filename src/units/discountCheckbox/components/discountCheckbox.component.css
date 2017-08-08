@@ -1,0 +1,20 @@
+.discount-checkbox-container {
+  position: relative;
+  width: 140px;
+}
+
+.discount-checkbox-container
+.tooltip-indicator {
+  width: 14px;
+  height: 18px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  border-radius: 100%;
+  display: inline-block;
+  position: absolute;
+  top: -6px;
+  right: 0;
+  padding-left: 6px;
+  padding-top: 2px;
+}

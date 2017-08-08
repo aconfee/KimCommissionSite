@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './desktopCommissionEstimate.component.css';
 import ItemizedEstimate from './itemizedEstimate.component.js';
+import DiscountCheckboxContainer from '../../discountCheckbox/containers/discountCheckbox.container.js';
 
 class DesktopCommissionEstimate extends Component {
   constructor(props) {
@@ -75,6 +76,9 @@ class DesktopCommissionEstimate extends Component {
     return (
       <div className={ "desktop-estimate " + this.state.stickyClass } style={ this.state.stickyObjectTop }>
         <ItemizedEstimate items={ this.props.items } total={ this.props.total } />
+        <div className="desktop-estimate-discount-checkbox-container">
+          <DiscountCheckboxContainer />
+        </div>
       </div>
     );
   };

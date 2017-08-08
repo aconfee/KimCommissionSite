@@ -1,0 +1,34 @@
+.checkbox-container {
+  width: 120px;
+}
+
+.checkbox-container
+.label {
+  margin-left: 40px;
+  vertical-align: middle;
+  font-size: 16px;
+}
+
+.checkbox-container
+.checkbox {
+  width: 25px;
+  height: 25px;
+
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background-color: #EBEAEA;
+  border: 1px solid #95989A;
+}
+
+.checkbox-container
+.checkbox:hover {
+  cursor: pointer;
+}
+
+.checkbox-container
+.checkbox.checked {
+  background-color: black;
+}

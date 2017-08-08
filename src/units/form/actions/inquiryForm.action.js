@@ -19,7 +19,8 @@ export const submitInquery = (senderDetails, commissionDetails) => {
     ...commissionDetails,
     detailTitle: detailTitles[commissionDetails.detailIndex],
     frameTitle: frameTitles[commissionDetails.framingIndex],
-    backgroundTitle: backgroundTitles[commissionDetails.backgroundIndex]
+    backgroundTitle: backgroundTitles[commissionDetails.backgroundIndex],
+    asIs: commissionDetails.discount === 1 ? false : true
   }
 
   const request = axios.post(url, {

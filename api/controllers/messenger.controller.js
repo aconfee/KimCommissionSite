@@ -29,12 +29,12 @@ module.exports.sendInquiry = function(req, res) {
   const frame = commissionDetails.frameTitle;
   const numberOfCharacters = commissionDetails.numberOfCharacters;
   const background = commissionDetails.backgroundTitle;
-  const asIs = false; // TODO
+  const asIs = commissionDetails.asIs;
 
   const characterEstimate = commissionDetails.character;
   const backgroundEstimate = commissionDetails.background;
-  const asIsDiscountMultiplier = 1.0; // TODO
-  const total = asIs ? commissionDetails.total * asIsDiscountMultiplier : commissionDetails.total;
+  const asIsDiscount = ((1.0 - commissionDetails.discount) * 100).toFixed(0);
+  const total = commissionDetails.total;
 
   const message = `
     Sender:
@@ -51,7 +51,7 @@ module.exports.sendInquiry = function(req, res) {
     Financials:
     Character: $${characterEstimate}
     Background: $${backgroundEstimate}
-    Discount: ${((1.0 - asIsDiscountMultiplier) * 100).toFixed(0)}%
+    Discount: ${asIsDiscount}%
     Total: $${total}`;
 
   const messageHtml = `<div>
@@ -69,7 +69,7 @@ module.exports.sendInquiry = function(req, res) {
     <h1>Financials</h1>
     <p><b>Character</b> $${characterEstimate}</p>
     <p><b>Background</b> $${backgroundEstimate}</p>
-    <p><b>Discount</b> ${((1.0 - asIsDiscountMultiplier) * 100).toFixed(0)}%</p>
+    <p><b>Discount</b> ${asIsDiscount}%</p>
     <p><b>Total: $${total}</b></p>
   </div>`;
 
