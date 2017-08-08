@@ -13,6 +13,7 @@ class InqueryForm extends Component {
       captcha: "",
       isMobile: this.isMobile(),
       isSending: false,
+      isSent: false,
       errors: {}
     };
   };
@@ -35,8 +36,7 @@ class InqueryForm extends Component {
           errors: { response: inquiryResponse.statusText }
         });
       } else {
-        // TODO Instead of sending error response, trigger animation.
-        this.setState({ isSending: false, errors: { response: "sent successfully!" } });
+        this.setState({ isSending: false, isSent: true });
       }
     }
   };
@@ -75,7 +75,6 @@ class InqueryForm extends Component {
 
     if(Object.keys(errors).length > 0) return;
 
-    // TODO Use this to trigger loading icon.
     this.setState({ isSending: true });
     this.props.onSubmit(this.state, this.props.estimate);
   };
@@ -110,20 +109,37 @@ class InqueryForm extends Component {
     }
   }
 
+  renderFlip = () => {
+    if(this.state.isSent) {
+      return "animate-flip-right";
+    }
+    return "";
+  }
+
   render() {
     return (
-      <div className="form-container">
-        <p>Estimate: ${ this.props.estimate.total }</p>
-        <p>This amount is just an initial approximation.</p>
-        <p>Once you hit send, I&#39;ll look over your details and get back to you within 24 hours!</p>
-        <form onSubmit={ this.handleSubmit }>
-          { this.renderInput("First", "text", "first", this.state.first, this.state.errors.first) }
-          { this.renderInput("Last", "text", "last", this.state.last, this.state.errors.last) }
-          { this.renderInput("Email", "email", "email", this.state.email, this.state.errors.email) }
-          { this.renderInput("What is 2 + 3?", "text", "captcha", this.state.captcha, this.state.errors.captcha) }
-          { this.renderErrors() }
-          { this.renderLoader() }
-        </form>
+      <div className="inquiry-form-container">
+        <div className={ "form-container " + this.renderFlip() }>
+          <div className="card-front">
+            <p className="header">Estimate: ${ this.props.estimate.total }</p>
+            <p className="subheader">This amount is just an initial approximation.</p>
+            <p className="front-information">Once you hit send, I&#39;ll look over your details and get back to you within 24 hours!</p>
+            <form onSubmit={ this.handleSubmit }>
+              { this.renderInput("First", "text", "first", this.state.first, this.state.errors.first) }
+              { this.renderInput("Last", "text", "last", this.state.last, this.state.errors.last) }
+              { this.renderInput("Email", "email", "email", this.state.email, this.state.errors.email) }
+              { this.renderInput("What is 2 + 3?", "text", "captcha", this.state.captcha, this.state.errors.captcha) }
+              { this.renderErrors() }
+              { this.renderLoader() }
+            </form>
+          </div>
+          <div className="card-back">
+            <img className="email-sent-image" src="./images/logo.jpg" alt="Thank you. Message sent." title="kimbyarting Peter the Duke. Thank you email sent." />
+            <p className="header back-header">Thank you!</p>
+            <p className="back-information">Your inquiry has been sent!</p>
+            <p className="back-information">I&#39;ll follow up within 24 hours :)</p>
+          </div>
+        </div>
       </div>
     );
   };
