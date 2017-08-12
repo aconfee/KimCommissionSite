@@ -9,6 +9,7 @@ import CommissionOptionPicker from '../units/commissionOptionPicker/containers/c
 import CommissionEstimate from '../units/estimate/containers/commissionEstimate.container.js';
 import EstimateScrollTrigger from '../units/scrollTrigger/components/estimateScrollTrigger.component.js';
 import InquiryFormContainer from '../units/form/containers/inquiryForm.container.js';
+import HackyAssModalContainer from '../units/hackyAssModal/hackyAssModal.container.js';
 
 class Home extends Component {
   render() {
@@ -50,6 +51,7 @@ class Home extends Component {
         </div>
 
         <InquiryFormContainer />
+        <HackyAssModalContainer />
 
       </div>
     );

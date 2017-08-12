@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './inquiryForm.component.css';
+import DiscountCheckboxContainer from '../../discountCheckbox/containers/discountCheckbox.container.js';
 
 class InqueryForm extends Component {
   constructor(props) {
@@ -130,6 +131,9 @@ class InqueryForm extends Component {
               { this.renderInput("Email", "email", "email", this.state.email, this.state.errors.email) }
               { this.renderInput("What is 2 + 3?", "text", "captcha", this.state.captcha, this.state.errors.captcha) }
               { this.renderErrors() }
+              <div className="inquiry-form-discount-checkbox">
+                <DiscountCheckboxContainer />
+              </div>
               { this.renderLoader() }
             </form>
           </div>

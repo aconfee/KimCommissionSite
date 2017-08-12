@@ -76,7 +76,7 @@ class DesktopCommissionEstimate extends Component {
     return (
       <div className={ "desktop-estimate " + this.state.stickyClass } style={ this.state.stickyObjectTop }>
         <ItemizedEstimate items={ this.props.items } total={ this.props.total } />
-        <div className="desktop-estimate-discount-checkbox-container">
+        <div className={ "desktop-estimate-discount-checkbox-container " + this.state.stickyClass }>
           <DiscountCheckboxContainer />
         </div>
       </div>

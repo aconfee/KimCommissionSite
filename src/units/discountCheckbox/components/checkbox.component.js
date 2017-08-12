@@ -4,22 +4,14 @@ import './checkbox.component.css';
 
 class Checkbox extends Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = { isChecked: false };
-  };
-
   handleClick = () => {
     if(this.props.onClick) {
-      this.props.onClick(!this.state.isChecked);
+      this.props.onClick(!this.props.isChecked);
     }
-
-    this.setState( prevState => ({ isChecked: !prevState.isChecked }));
   };
 
   renderChecked = () => {
-    return this.state.isChecked ? "checked" : "";
+    return this.props.isChecked ? "checked" : "";
   };
 
   render() {

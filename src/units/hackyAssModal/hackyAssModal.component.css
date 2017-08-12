@@ -1,0 +1,72 @@
+.hacky-ass-modal
+.tooltip {
+  width: 86%;
+  height: 250px;
+  background-color: #454343;
+  display: block;
+  position: fixed;
+  left: 2%;
+  top: 2%;
+
+  padding: 15px 5% 20px 5%;
+
+  z-index: 100;
+}
+
+.hacky-ass-modal
+.tooltip-icon {
+  width: 26px;
+  height: 31px;
+  border-radius: 100%;
+  background-color: white;
+  font-size: 20px;
+  color: #454343;
+  margin: 0 auto;
+  padding-left: 14px;
+  padding-top: 9px;
+}
+
+.hacky-ass-modal
+.tooltip-info {
+  font-size: 16px;
+  color: #DBDADA;
+}
+
+.hacky-ass-modal
+.ex {
+  width: 35px;
+  height: 35px;
+  right: 4px;
+  top: -13px;
+  transform: translateY(50%);
+  position: absolute;
+}
+
+.hacky-ass-modal
+.ex:hover {
+  cursor: pointer;
+}
+
+.hacky-ass-modal
+.line {
+  /* Dimension */
+  width: 35px;
+  height: 2px;
+
+  /* Position */
+  position: absolute;
+
+  /* Style */
+  background-color: #DBDADA;
+  border-radius: 1px;
+}
+
+.hacky-ass-modal
+.line.one {
+  transform: translateY(17px) rotateZ(45deg);
+}
+
+.hacky-ass-modal
+.line.two {
+  transform: translateY(17px) rotateZ(-45deg);
+}

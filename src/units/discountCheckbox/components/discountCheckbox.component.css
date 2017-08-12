@@ -18,3 +18,59 @@
   padding-left: 6px;
   padding-top: 2px;
 }
+
+.discount-checkbox-container
+.tooltip-indicator:hover {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1000px) {
+  .discount-checkbox-container
+  .tooltip-indicator:hover .tooltip {
+    display: inline-block;
+  }
+}
+
+.discount-checkbox-container
+.tooltip {
+  width: 330px;
+  height: 205px;
+  background-color: #454343;
+  display: none;
+  position: absolute;
+  left:-350px;
+  top: -260px;
+
+  padding: 15px 35px 20px 35px;
+}
+
+.discount-checkbox-container
+.tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 75%;
+    margin-left: -8px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: #454343 transparent transparent transparent;
+}
+
+.discount-checkbox-container
+.tooltip-icon {
+  width: 26px;
+  height: 31px;
+  border-radius: 100%;
+  background-color: white;
+  font-size: 20px;
+  color: #454343;
+  margin: 0 auto;
+  padding-left: 14px;
+  padding-top: 9px;
+}
+
+.discount-checkbox-container
+.tooltip-info {
+  font-size: 16px;
+  color: #DBDADA;
+}

@@ -49,9 +49,34 @@
 
 .desktop-estimate
 .desktop-estimate-discount-checkbox-container {
-  position: absolute;
+  position: fixed;
 
-  bottom: -60px;
-  left: 50%;
+  bottom: inherit;
+  left: 75%;
+  top: -30px;
   transform: translateX(-50%);
+
+  transition: ease 0.2s;
+  -webkit-transition: ease 0.2s;
+}
+
+@media only screen and (min-width: 1000px) {
+  .desktop-estimate
+  .desktop-estimate-discount-checkbox-container {
+    position: absolute;
+
+    bottom: -60px;
+    left: 50%;
+    top: inherit;
+  }
+}
+
+.desktop-estimate-discount-checkbox-container.animate-show {
+  top: 80px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .desktop-estimate-discount-checkbox-container.animate-show {
+    top: inherit;
+  }
 }
