@@ -16,6 +16,8 @@ app.use('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+var port = process.env.PORT || 3000;
+
 // Start server
-app.listen(8081);
-console.log('Server started on port 8081.');
+app.listen(port);
+console.log('Server started on port ' + port '.');
