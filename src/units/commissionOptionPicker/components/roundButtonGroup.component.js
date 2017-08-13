@@ -8,7 +8,14 @@ class RoundButtonGroup extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { activeIndicatorLocation: 0 };
+    // Second answer: https://stackoverflow.com/questions/7944460/detect-safari-browser
+    // SVG is super not supported in Safari. Degrade gracefully.
+    let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    this.state = {
+      activeIndicatorLocation: 0,
+      isSafari
+    };
   }
 
   handleClick = nextIndex => {
@@ -39,7 +46,7 @@ class RoundButtonGroup extends Component {
     const { activeIndicatorAnimation } = this.state;
 
     return (
-      <div className="option-buttons-container">
+      <div className="option-buttons-container" style={ this.state.isSafari ? { filter: "none" } : {}}>
         { this.renderButtons() }
 
         <div className="blob animate" style={ activeIndicatorAnimation }></div>

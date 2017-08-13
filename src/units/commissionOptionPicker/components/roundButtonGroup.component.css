@@ -2,8 +2,8 @@
   position: relative;
   display: inline-block;
 
-  -webkit-filter:url(#goo);
-  filter:url(#goo);
+  -webkit-filter: url('#goo');
+  filter: url('#goo');
 }
 
 .goo-filter {
