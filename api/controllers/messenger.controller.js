@@ -83,9 +83,11 @@ module.exports.sendInquiry = function(req, res) {
 
   transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        console.log("Something went wrong when trying to send email.");
+        console.log("Something went wrong when trying to send email:");
+        console.log(error);
+        
         res.status(500);
-        res.json({ messageId: info.messageId, response: info.response });
+        res.json({ error });
         return;
       }
 
