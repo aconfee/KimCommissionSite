@@ -4,15 +4,22 @@ const nodemailer = require('nodemailer');
 const smtpPassword = process.env.SMTP_PASSWORD;
 if(!smtpPassword) {
   console.error("Please set environment variable SMTP_PASSWORD for email messenger.");
+} else {
+  console.log('smtp password is: ' + smtpPassword);
 }
 
 let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false, // secure:true for port 465, secure:false for port 587
+    port: 465,
+    secure: true, // secure:true for port 465, secure:false for port 587
     auth: {
+        type: "OAuth2",
         user: "adamestela@gmail.com",
-        pass: smtpPassword
+        //pass: smtpPassword
+        clientId: "560375925539-ur6tu6l4700n8oj2ajeut5quol373hcn.apps.googleusercontent.com",
+        clientSecret: "J--Lvttm580cW7GAqBNhjI6w",
+        refreshToken: "1/WtToEc1NTBCuD8860_FuYuqm3oYMnOnQchr42xZo9Idp1rFrm92gjGOK5YgoDzVm",
+        accessToken: "ya29.GlumBGSpGgcTSwndGVBzxzTwlRQH4cbhIPG-AOay5-X-_tZ7_nxxC24HPJO_ijqJEMBxBjVgHw5RQW5YadbHDHwS4yudJTosasphnEofBFUle97KQxLPmJJ1UAt8"
     }
 });
 
@@ -85,7 +92,7 @@ module.exports.sendInquiry = function(req, res) {
       if (error) {
         console.log("Something went wrong when trying to send email:");
         console.log(error);
-        
+
         res.status(500);
         res.json({ error });
         return;
