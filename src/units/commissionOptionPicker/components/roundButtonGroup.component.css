@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
 
+  -webkit-filter:url(#goo);
   filter:url(#goo);
 }
 
@@ -23,12 +24,12 @@
   border-radius: 100%;
   background: #e97b7a;
 
-  transition: ease 0.5s;
   -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
 }
 
 .option-buttons-container
 .blob2 {
-  transition-delay: 0.2s;
   -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }

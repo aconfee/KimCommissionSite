@@ -33,7 +33,7 @@
 
   /* Effects */
   -webkit-transition: 2s;
-    transition: 2s;
+  transition: 2s;
 }
 
 .hamburger
@@ -53,7 +53,10 @@
 
 .hamburger
 .animate {
+  -webkit-animation-duration: 0.15s;
   animation-duration: 0.15s;
+
+  -webkit-animation-timing-function: ease-in;
   animation-timing-function: ease-in;
 }
 
@@ -62,10 +65,53 @@
   display: none;
 }
 
+@-webkit-keyframes topLine {
+    0%   {
+      top: 0px;
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    50%  {
+      top: 10px;
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 10px;
+      -ms-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+}
+
 @keyframes topLine {
-    0%   { top: 0px; transform: rotate(0deg); }
-    50%  { top: 10px; transform: rotate(0deg); }
-    100% { top: 10px; transform: rotate(45deg); }
+    0%   {
+      top: 0px;
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    50%  {
+      top: 10px;
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 10px;
+      -ms-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes middleLine {
+    0%   { top: 10px; opacity: 1; }
+    50%  { opacity: 1; }
+    51%  { opacity: 0; }
+    100% { top: 10px; opacity: 0; }
 }
 
 @keyframes middleLine {
@@ -75,50 +121,116 @@
     100% { top: 10px; opacity: 0; }
 }
 
+@-webkit-keyframes bottomLine {
+    0%   {
+      top: 20px;
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    50%  {
+      top: 10px;
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 10px;
+      -ms-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+}
+
 @keyframes bottomLine {
-    0%   { top: 20px; transform: rotate(0deg); }
-    50%  { top: 10px; transform: rotate(0deg); }
-    100% { top: 10px; transform: rotate(-45deg); }
+    0%   {
+      top: 20px;
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    50%  {
+      top: 10px;
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 10px;
+      -ms-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
 }
 
 .hamburger
 #top-burger.line.animate {
+  -webkit-animation-name: topLine;
   animation-name: topLine;
+
+  -webkit-animation-direction: normal;
   animation-direction: normal;
+
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
 .hamburger
 #middle-burger.line.animate {
+  -webkit-animation-name: middleLine;
   animation-name: middleLine;
+
+  -webkit-animation-direction: normal;
   animation-direction: normal;
+
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
 .hamburger
 #bottom-burger.line.animate {
+  -webkit-animation-name: bottomLine;
   animation-name: bottomLine;
+
+  -webkit-animation-direction: normal;
   animation-direction: normal;
+
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 
 .hamburger
 #top-cross.line.animate {
+  -webkit-animation-name: topLine;
   animation-name: topLine;
+
+  -webkit-animation-direction: reverse;
   animation-direction: reverse;
+
+  -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
 
 .hamburger
 #middle-cross.line.animate {
+  -webkit-animation-name: middleLine;
   animation-name: middleLine;
+
+  -webkit-animation-direction: reverse;
   animation-direction: reverse;
+
+  -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }
 
 .hamburger
 #bottom-cross.line.animate {
+  -webkit-animation-name: bottomLine;
   animation-name: bottomLine;
+
+  -webkit-animation-direction: reverse;
   animation-direction: reverse;
+
+  -webkit-animation-fill-mode: backwards;
   animation-fill-mode: backwards;
 }

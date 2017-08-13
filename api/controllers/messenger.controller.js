@@ -1,11 +1,24 @@
 'use strict';
 const nodemailer = require('nodemailer');
 
-const smtpPassword = process.env.SMTP_PASSWORD;
-if(!smtpPassword) {
-  console.error("Please set environment variable SMTP_PASSWORD for email messenger.");
-} else {
-  console.log('smtp password is: ' + smtpPassword);
+const smtpClientId = process.env.SMTP_CLIENT_ID;
+if(!smtpClientId) {
+  console.error("Please set environment variable SMTP_CLIENT_ID for email messenger.");
+}
+
+const smtpClientSecret = process.env.SMTP_CLIENT_SECRET;
+if(!smtpClientSecret) {
+  console.error("Please set environment variable SMTP_CLIENT_SECRET for email messenger.");
+}
+
+const smtpRefreshToken = process.env.SMTP_REFRESH_TOKEN;
+if(!smtpRefreshToken) {
+  console.error("Please set environment variable SMTP_REFRESH_TOKEN for email messenger.");
+}
+
+const smtpAccessToken = process.env.SMTP_ACCESS_TOKEN;
+if(!smtpAccessToken) {
+  console.error("Please set environment variable SMTP_ACCESS_TOKEN for email messenger.");
 }
 
 let transporter = nodemailer.createTransport({
@@ -15,11 +28,10 @@ let transporter = nodemailer.createTransport({
     auth: {
         type: "OAuth2",
         user: "adamestela@gmail.com",
-        //pass: smtpPassword
-        clientId: "560375925539-ur6tu6l4700n8oj2ajeut5quol373hcn.apps.googleusercontent.com",
-        clientSecret: "J--Lvttm580cW7GAqBNhjI6w",
-        refreshToken: "1/WtToEc1NTBCuD8860_FuYuqm3oYMnOnQchr42xZo9Idp1rFrm92gjGOK5YgoDzVm",
-        accessToken: "ya29.GlumBGSpGgcTSwndGVBzxzTwlRQH4cbhIPG-AOay5-X-_tZ7_nxxC24HPJO_ijqJEMBxBjVgHw5RQW5YadbHDHwS4yudJTosasphnEofBFUle97KQxLPmJJ1UAt8"
+        clientId: smtpClientId,
+        clientSecret: smtpClientSecret,
+        refreshToken: smtpRefreshToken,
+        accessToken: smtpAccessToken
     }
 });
 

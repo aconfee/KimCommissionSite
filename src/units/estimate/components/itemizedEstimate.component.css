@@ -56,6 +56,9 @@
   padding: 0;
   border: none;
   margin-left: 25%;
+
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
@@ -67,6 +70,9 @@
     border-bottom: 1px dashed #95989A;
     width: inherit;
     margin-left: 0;
+
+    -ms-transform: none;
+    -webkit-transform: none;
     transform: none;
   }
 }

@@ -1,6 +1,7 @@
 /* I'm so sorry.... one day I'll refactor this... */
 
 .inquiry-form-container {
+  -webkit-perspective: 1000px;
   perspective: 1000px;
 }
 
@@ -8,12 +9,16 @@
 .card-front,
 .inquiry-form-container
 .card-back {
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .inquiry-form-container
 .card-front{
   z-index: 1;
+
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
 	transform: rotateY(0deg);
 }
 
@@ -25,32 +30,79 @@
   left: 0;
   text-align: center;
 
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
   transform: rotateY(180deg);
 }
 
 @-webkit-keyframes flip-right {
-  0% { transform: rotateY(0deg) }
-  33% { transform: rotateY(190deg) }
-  66% { transform: rotateY(175deg) }
-  100% { transform: rotateY(179deg) }
+  0% {
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotateY(0deg);
+  }
+  33% {
+    -ms-transform: rotate(190deg);
+    -webkit-transform: rotate(190deg);
+    transform: rotateY(190deg);
+  }
+  66% {
+    -ms-transform: rotate(175deg);
+    -webkit-transform: rotate(175deg);
+    transform: rotateY(175deg);
+  }
+  100% {
+    -ms-transform: rotate(179deg);
+    -webkit-transform: rotate(179deg);
+    transform: rotateY(179deg);
+  }
 }
 @keyframes flip-right {
-  0% { transform: rotateY(0deg) }
-  33% { transform: rotateY(190deg) }
-  66% { transform: rotateY(175deg) }
-  100% { transform: rotateY(179deg) }
+  0% {
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotateY(0deg);
+  }
+  33% {
+    -ms-transform: rotate(190deg);
+    -webkit-transform: rotate(190deg);
+    transform: rotateY(190deg);
+  }
+  66% {
+    -ms-transform: rotate(175deg);
+    -webkit-transform: rotate(175deg);
+    transform: rotateY(175deg);
+  }
+  100% {
+    -ms-transform: rotate(179deg);
+    -webkit-transform: rotate(179deg);
+    transform: rotateY(179deg);
+  }
 }
 
 .inquiry-form-container
 .animate-flip-right {
   position: relative;
 
+  -webkit-animation-name: flip-right;
   animation-name: flip-right;
+
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+
+  -webkit-animation-duration: 0.75s;
   animation-duration: 0.75s;
+
+  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+
+  -webkit-animation-direction: normal;
   animation-direction: normal;
+
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+
+  -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
 }
 
@@ -140,6 +192,8 @@ input {
   font-size: 14px;
   color: #656565;
   padding: 0 4%;
+  border-radius: 0;
+  -webkit-appearance: none;
 }
 
 .input-container
@@ -211,7 +265,10 @@ input[type=submit]:hover {
   cursor: pointer;
   background-color: white;
   color: #5A5A5A;
+
+  -webkit-transition: ease 0.2s;
   transition: ease 0.2s;
+
   border: 2px solid #5A5A5A;
 }
 
@@ -225,14 +282,45 @@ input[type=submit]:hover {
   border: 1px solid red !important;
 }
 
+@-webkit-keyframes spin {
+    0% {
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -ms-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -ms-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+}
+
 .loader {
     border: 5px solid #f3f3f3; /* Light grey */
     border-top: 5px solid #555; /* Dark grey */
     border-radius: 50%;
     width: 60px;
     height: 60px;
+
+    -webkit-animation: spin 1s infinite;
     animation: spin 1s infinite;
+
+    -webkit-animation-timing-function: cubic-bezier(.71,.12,.31,.84);
     animation-timing-function: cubic-bezier(.71,.12,.31,.84);
+
     margin: 0 auto;
     margin-top: 80px;
 }
@@ -243,11 +331,6 @@ input[type=submit]:hover {
     height: 40px;
     margin-top: 5px;
   }
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
 }
 
 .email-sent-image {

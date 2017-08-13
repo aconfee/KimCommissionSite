@@ -53,11 +53,16 @@ p {
 
 .title-container {
   width: 100%;
+
+  -ms-transform: none;
+  -webkit-transform: none;
   transform: none;
 }
 
 @media only screen and (min-width: 800px) {
   .title-container {
+    -ms-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
     transform: translateY(100%);
   }
 }
@@ -80,6 +85,9 @@ p {
     margin: inherit;
 
     margin-top: 50%;
+
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 }
@@ -123,9 +131,6 @@ img {
   max-width: 500px;
   width: 100%;
   height: auto;
-
-  margin-top: 50%;
-  transform: translateY(-50%);
 }
 
 @media only screen and (min-width: 800px) {

@@ -5,8 +5,8 @@
   position: fixed;
   z-index: 2;
 
-  transition: ease 0.2s;
   -webkit-transition: ease 0.2s;
+  transition: ease 0.2s;
 }
 
 .desktop-estimate.animate-show {
@@ -23,8 +23,8 @@
     top: 125px;
     z-index: inherit;
 
-    transition: none;
     -webkit-transition: none;
+    transition: none;
   }
 
   .desktop-estimate.animate-show {
@@ -54,10 +54,13 @@
   bottom: inherit;
   left: 75%;
   top: -30px;
+
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 
-  transition: ease 0.2s;
   -webkit-transition: ease 0.2s;
+  transition: ease 0.2s;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -67,7 +70,7 @@
 
     bottom: -60px;
     left: 50%;
-    top: inherit;
+    top: auto;
   }
 }
 
@@ -77,6 +80,6 @@
 
 @media only screen and (min-width: 1000px) {
   .desktop-estimate-discount-checkbox-container.animate-show {
-    top: inherit;
+    top: auto;
   }
 }

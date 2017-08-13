@@ -20,15 +20,16 @@
   z-index: 1;
   top: -250px;
 
-  background-color: #FAF7F7;
+  background-color: #EDEDED;
   opacity: 0;
 
   -webkit-transition: 0.2s;
-    transition: 0.2s;
+  transition: 0.2s;
 }
 
 .navbar-background.open {
   top: 0px;
+  position: absolute;
 
   opacity: 1;
 }
@@ -51,9 +52,12 @@
   right: 0;
   margin: 0 auto;
 
+  -ms-transform: scaleX(1.2);
+  -webkit-transform: scaleX(1.2);
   transform: scaleX(1.2);
+
   border-radius: 100%;
-  background-color: #FAF7F7;
+  background-color: #EDEDED;
 }
 
 .navbar
@@ -111,7 +115,7 @@
   text-align: center;
 
   -webkit-transition: 0.2s;
-    transition: 0.2s;
+  transition: 0.2s;
 }
 
 /* Corresponds with hamburger */
