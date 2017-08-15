@@ -52,7 +52,7 @@ class RoundButtonGroup extends Component {
         <div className="blob animate" style={ activeIndicatorAnimation }></div>
         <div className="blob blob2 animate" style={ activeIndicatorAnimation }></div>
 
-        <svg className="goo-filter">
+        <svg width="0" height="0">
           <defs>
             <filter id="goo">
               <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />

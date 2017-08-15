@@ -1,41 +1,41 @@
-.section {
-  display: block;
-  position: relative;
-}
-
-.section
+.landing
 p {
   margin: 0;
 }
 
-.section
-.row {
-  display: block;
-  position: relative;
-  margin-bottom: 100px;
-}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 
-.section
-.row
-.column-half {
-  width: 100%;
-  height: auto;
-
-  display: inline-block;
-
-  vertical-align: top;
+  margin-bottom: 150px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 @media only screen and (min-width: 800px) {
-  .section
-  .row
-  .column-half {
+  .flex-container {
+    flex-direction: row;
+    margin-bottom: 250px;
+  }
+}
+
+.flex-self-portrait {
+  width: 75%;
+  max-width: 700px;
+}
+
+@media only screen and (min-width: 800px) {
+  .flex-self-portrait {
     width: 50%;
   }
 }
 
-.center {
-  text-align: center;
+.flex-self-portrait
+img {
+  width: 100%;
+  max-width: 100%;
 }
 
 #title {
@@ -46,95 +46,31 @@ p {
 
 #subtitle {
   position: relative;
-  left: -64px;
+  left: 40px;
   top: 11px;
   font-size: 18px;
 }
 
-.title-container {
-  width: 100%;
-
-  -ms-transform: none;
-  -webkit-transform: none;
-  transform: none;
+.flex-one {
+  width: 75%;
+  max-width: 700px;
 }
 
-@media only screen and (min-width: 800px) {
-  .title-container {
-    -ms-transform: translateY(100%);
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-  }
-}
-
-.details-container {
-  width: 58%;
-  max-width: 58%;
-
-  text-align: left;
-
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-
-@media only screen and (min-width: 800px) {
-  .details-container {
-    left: inherit;
-    right: inherit;
-    margin: inherit;
-
-    margin-top: 50%;
-
-    -ms-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-}
-
-.details-container
-p {
-  text-align: left;
-  margin-bottom: 30px;
-}
-
-.details-container :last-child {
-  margin-top: 70px;
-}
-
-.kim-cover {
-  max-width: 100%;
-  height: auto;
-  text-align: center;
-}
-
-.kim-cover
+.flex-one
 img {
   max-width: 100%;
 }
 
-@media only screen and (min-width: 800px) {
-  .kim-cover {
-    max-width: 90%;
-    text-align: left;
-  }
-
-  .kim-cover
-  img {
-    max-width: 90%;
-  }
+.flex-two {
+  max-width: 375px;
 }
 
-.details-cover {
-  display: none;
-
-  max-width: 500px;
-  width: 100%;
-  height: auto;
+.flex-two
+p {
+  margin: 15px 0;
+  display: inline-block;
 }
 
-@media only screen and (min-width: 800px) {
-  .details-cover {
-    display: inline-block;
-  }
+.flex-two :last-child {
+  margin-top: 50px;
 }

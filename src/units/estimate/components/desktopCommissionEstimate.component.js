@@ -50,7 +50,7 @@ class DesktopCommissionEstimate extends Component {
     if(stickyTrigger.isTriggered && stickyClass !== "stick"){
       this.setState({
         stickyClass: "stick",
-        stickyObjectTop: { top: (window.innerHeight / 2 - 100) + "px" }
+        stickyObjectTop: { top: (window.innerHeight / 2 - 140) + "px" }
       });
     }
     else if(!stickyTrigger.isTriggered){
