@@ -3,6 +3,7 @@ p {
   margin: 0;
 }
 
+.landing
 .flex-container {
   display: flex;
   flex-direction: column;
@@ -15,6 +16,7 @@ p {
 }
 
 @media only screen and (min-width: 800px) {
+  .landing
   .flex-container {
     flex-direction: row;
     margin-bottom: 250px;
