@@ -60,15 +60,15 @@ module.exports.sendInquiry = function(req, res) {
     ${email}
 
     Commission:
-    Detail: ${detail}
-    Frame: ${frame}
+    Detail: ${detailTitle}
+    Frame: ${frameTitle}
     Number of Characters: ${numberOfCharacters}
-    Background: ${background}
+    Background: ${backgroundTitle}
     As-is: ${asIs ? "Yes" : "No"}
 
     Financials:
-    Character: $${characterEstimate}
-    Background: $${backgroundEstimate}
+    Character: $${character}
+    Background: $${background}
     Discount: ${asIsDiscount}%
     Total: $${total}`;
 
@@ -78,15 +78,15 @@ module.exports.sendInquiry = function(req, res) {
     <p>${email}</p>
     <br />
     <h1>Commission</h1>
-    <p><b>Detail</b> ${detail}</p>
-    <p><b>Frame</b> ${frame}</p>
+    <p><b>Detail</b> ${detailTitle}</p>
+    <p><b>Frame</b> ${frameTitle}</p>
     <p><b>Number of Characters</b> ${numberOfCharacters}</p>
-    <p><b>Background</b> ${background}</p>
+    <p><b>Background</b> ${backgroundTitle}</p>
     <p><b>As-is</b> ${asIs ? "Yes" : "No"}</p>
     <br />
     <h1>Financials</h1>
-    <p><b>Character</b> $${characterEstimate}</p>
-    <p><b>Background</b> $${backgroundEstimate}</p>
+    <p><b>Character</b> $${character}</p>
+    <p><b>Background</b> $${background}</p>
     <p><b>Discount</b> ${asIsDiscount}%</p>
     <p><b>Total: $${total}</b></p>
   </div>`;
