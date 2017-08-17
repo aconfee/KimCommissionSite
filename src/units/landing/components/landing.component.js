@@ -6,7 +6,7 @@ function Landing(props) {
     <div className="landing">
       <div className="flex-container">
         <div>
-          <p id="subtitle" className="font-color-light">KimbyArting</p>
+          <p id="subtitle" className="font-color-regular">KimbyArting</p>
           <p id="title" className="font-color-dark">Commissions</p>
         </div>
         <div className="flex-self-portrait">

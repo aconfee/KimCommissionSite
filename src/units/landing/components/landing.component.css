@@ -49,30 +49,37 @@ img {
 #subtitle {
   position: relative;
   left: 40px;
-  top: 11px;
-  font-size: 18px;
+  top: 16px;
+  font-size: 40px;
+  font-family: 'Cookie', cursive;
 }
 
+.landing
 .flex-one {
   width: 75%;
   max-width: 700px;
 }
 
+.landing
 .flex-one
 img {
   max-width: 100%;
 }
 
+.landing
 .flex-two {
   max-width: 375px;
+  line-height: 1.5em;
 }
 
+.landing
 .flex-two
 p {
   margin: 15px 0;
   display: inline-block;
 }
 
+.landing
 .flex-two :last-child {
   margin-top: 50px;
 }
