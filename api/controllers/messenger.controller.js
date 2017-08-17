@@ -39,21 +39,20 @@ module.exports.sendInquiry = function(req, res) {
 
   const { senderDetails, commissionDetails } = req.body;
 
-  const first = senderDetails.first;
-  const last = senderDetails.last;
-  const email = senderDetails.email;
-  const captcha = senderDetails.captcha;
+  const { first, last, email } = senderDetails;
 
-  const detail = commissionDetails.detailTitle;
-  const frame = commissionDetails.frameTitle;
-  const numberOfCharacters = commissionDetails.numberOfCharacters;
-  const background = commissionDetails.backgroundTitle;
-  const asIs = commissionDetails.asIs;
+  const {
+    detailTitle,
+    frameTitle,
+    numberOfCharacters,
+    backgroundTitle,
+    asIs,
+    character,
+    background,
+    discount,
+    total } = commissionDetails;
 
-  const characterEstimate = commissionDetails.character;
-  const backgroundEstimate = commissionDetails.background;
-  const asIsDiscount = ((1.0 - commissionDetails.discount) * 100).toFixed(0);
-  const total = commissionDetails.total;
+  const asIsDiscount = ((1.0 - discount) * 100).toFixed(0);
 
   const message = `
     Sender:
@@ -116,6 +115,45 @@ module.exports.sendInquiry = function(req, res) {
 };
 
 module.exports.sendMessage = function(req, res) {
-  res.satus(200);
-  res.json({ message: "Not Implemented" });
+
+  const { first, last, email, message } = req.body.senderDetails;
+
+  const message = `
+    Sender:
+    ${first} ${last}
+    ${email}
+
+    Message:
+    ${message}`;
+
+  const messageHtml = `<div>
+    <h1>Sender</h1>
+    <p>${first} ${last}</p>
+    <p>${email}</p>
+    <br />
+    <h1>Message</h1>
+    <p>${message}</p>
+  </div>`;
+
+  let mailOptions = {
+      from: '"Kimby Arting Commissions" <adamestela@gmail.com>',
+      to: "adamestela@gmail.com",
+      subject: "NEW COMMISSION MESSAGE!!",
+      text: message,
+      html: messageHtml
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log("Something went wrong when trying to send email:");
+        console.log(error);
+
+        res.status(500);
+        res.json({ error });
+        return;
+      }
+
+      res.status(200);
+      res.json({ messageId: info.messageId, response: info.response });
+  });
 };

@@ -34,4 +34,18 @@ export const submitInquery = (senderDetails, commissionDetails) => {
   };
 }
 
+export const sendMessage = (senderDetails) => {
+  const url = '/api/contact/message';
+
+  const request = axios.post(url, {
+    senderDetails
+  });
+
+  return {
+    type: SEND_MESSAGE_ACTION_TYPE,
+    payload: request
+  };
+}
+
 export const SUBMIT_INQUERY_ACTION_TYPE = "submitInquery";
+export const SEND_MESSAGE_ACTION_TYPE = "sendMessage";

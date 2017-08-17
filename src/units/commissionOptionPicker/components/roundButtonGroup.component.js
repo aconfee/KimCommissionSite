@@ -46,11 +46,13 @@ class RoundButtonGroup extends Component {
     const { activeIndicatorAnimation } = this.state;
 
     return (
-      <div className="option-buttons-container" style={ this.state.isSafari ? { filter: "none" } : {}}>
-        { this.renderButtons() }
+      <span>
+        <div className="option-buttons-container" style={ this.state.isSafari ? { filter: "none" } : {}}>
+          { this.renderButtons() }
 
-        <div className="blob animate" style={ activeIndicatorAnimation }></div>
-        <div className="blob blob2 animate" style={ activeIndicatorAnimation }></div>
+          <div className="blob animate" style={ activeIndicatorAnimation }></div>
+          <div className="blob blob2 animate" style={ activeIndicatorAnimation }></div>
+        </div>
 
         <svg width="0" height="0">
           <defs>
@@ -61,7 +63,7 @@ class RoundButtonGroup extends Component {
             </filter>
           </defs>
         </svg>
-      </div>
+      </span>
     );
   }
 }

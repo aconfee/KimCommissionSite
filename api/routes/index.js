@@ -5,7 +5,7 @@ var messenger = require('../controllers/messenger.controller.js');
 var admin = require('../controllers/admin.controller.js');
 
 router.post("/contact/inquiry", messenger.sendInquiry);
-router.post("/contact/general", messenger.sendMessage);
+router.post("/contact/message", messenger.sendMessage);
 
 router.put("/availability/:status", admin.updateStatus);
 

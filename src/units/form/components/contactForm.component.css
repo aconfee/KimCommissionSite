@@ -1,17 +1,19 @@
 /* I'm so sorry.... one day I'll refactor this... */
 
-.inquiry-form-container {
+.contact-form-container {
   -webkit-perspective: 1000px;
   perspective: 1000px;
 }
 
+.contact-form-container
 .card-front,
-.inquiry-form-container
+.contact-form-container
 .card-back {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
+.contact-form-container
 .card-front{
   z-index: 1;
 
@@ -20,6 +22,7 @@
 	transform: rotateY(0deg);
 }
 
+.contact-form-container
 .card-back{
   width: 100%;
   position: absolute;
@@ -77,6 +80,7 @@
   }
 }
 
+.contact-form-container
 .animate-flip-right {
   position: relative;
 
@@ -102,6 +106,7 @@
   animation-timing-function: ease;
 }
 
+.contact-form-container
 .form-container {
   width: 70%;
   max-width: 500px;
@@ -113,6 +118,7 @@
 }
 
 @media only screen and (min-width: 750px) {
+  .contact-form-container
   .form-container {
     width: 640px;
     max-width: none;
@@ -120,40 +126,41 @@
 }
 
 @media only screen and (min-width: 750px) {
+  .contact-form-container
   .form-container p {
     margin-left: 10px;
   }
 }
 
-.inquiry-form-container
+.contact-form-container
 .header {
   font-size: 24px;
   color: #95989A;
   margin: 20px 0 0 0;
 }
 
-.inquiry-form-container
+.contact-form-container
 .back-header {
   margin: 0 0 30px 0;
 }
 
-.inquiry-form-container
+.contact-form-container
 .subheader {
   font-size: 12px;
   color: #95989A;
-  margin: 5px 0 0 0;
+  margin: 5px 0 30px 0;
 }
 
-.inquiry-form-container
+.contact-form-container
 .front-information {
   font-size: 17px;
   color: #BEBFBF;
-  margin: 30px 0 30px 0;
+  margin: 0 0 30px 0;
   width: 400px;
   max-width: 100%;
 }
 
-.inquiry-form-container
+.contact-form-container
 .back-information {
   font-size: 17px;
   color: #BEBFBF;
@@ -161,18 +168,18 @@
 }
 
 @media only screen and (min-width: 750px) {
-  .inquiry-form-container
+  .contact-form-container
   .front-information {
     font-size: 20px;
   }
 
-  .inquiry-form-container
+  .contact-form-container
   .back-information {
     font-size: 20px;
   }
 }
 
-.inquiry-form-container
+.contact-form-container
 .input-container {
   position: relative;
   width: 92%;
@@ -182,7 +189,7 @@
 }
 
 @media only screen and (min-width: 750px) {
-  .inquiry-form-container
+  .contact-form-container
   .input-container {
     width: 300px;
     height: 70px;
@@ -202,7 +209,8 @@ input {
 }
 
 .input-container
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   font-size: 14px;
   color: #A1A1A2;
 }
@@ -245,6 +253,43 @@ input[type=number] {
   }
 }
 
+.message-input-container {
+  width: 92%;
+  height: 230px;
+  position: relative;
+  margin: 5px 0;
+}
+
+@media only screen and (min-width: 750px) {
+  .message-input-container {
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+}
+
+textarea {
+  width: 100%;
+  height: 180px;
+  border: 1px solid #95989A;
+  background-color: #F2EFEF;
+  position: absolute;
+  resize: none;
+  font-size: 14px;
+  color: #656565;
+  line-height: 30px;
+  padding: 4%;
+  top: 0;
+}
+
+@media only screen and (min-width: 750px) {
+  textarea {
+    width: 600px;
+    padding: 10px;
+    top: 25px;
+  }
+}
+
 input[type=submit] {
   width: 100%;
   height: 60px;
@@ -252,7 +297,7 @@ input[type=submit] {
   font-size: 17px;
   color: white;
   border: none;
-  margin-top: 90px;
+  margin-top: 50px;
   margin-left: 0;
   border-radius: 0;
   -webkit-appearance: none;
@@ -344,22 +389,4 @@ input[type=submit]:hover {
 .email-sent-image {
   margin-top: 40px;
   margin-bottom: 20px;
-}
-
-.inquiry-form-container
-.inquiry-form-discount-checkbox {
-  position: absolute;
-  right: inherit;
-  bottom: inherit;
-  margin-top: 15px;
-}
-
-@media only screen and (min-width: 750px) {
-  .inquiry-form-container
-  .inquiry-form-discount-checkbox {
-    position: absolute;
-    right: 8px;
-    bottom: 11px;
-    margin: 0;
-  }
 }

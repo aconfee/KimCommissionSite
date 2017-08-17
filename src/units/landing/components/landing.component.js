@@ -19,7 +19,7 @@ function Landing(props) {
           <img src="./images/details-cover.jpg" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
         </div>
         <div className="flex-two">
-          <p className="font-color-regular font-size-regular">Reach Out in 5 Clicks</p>
+          <p id="info-header" className="font-color-regular font-size-regular">Reach Out in 5 Clicks</p>
           <p className="font-color-light font-size-small">No commitment, just start a conversation :) Choose the options that best describe what you want below.</p>
           <p className="font-color-light font-size-small">I’ll reach out to you within 24 hours after you send.</p>
           <p className="font-color-dark font-size-small"><b>Commercial commissions?</b> Click here.</p>
