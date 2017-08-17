@@ -118,7 +118,7 @@ module.exports.sendMessage = function(req, res) {
 
   const { first, last, email, message } = req.body.senderDetails;
 
-  const message = `
+  const messageText = `
     Sender:
     ${first} ${last}
     ${email}
@@ -139,7 +139,7 @@ module.exports.sendMessage = function(req, res) {
       from: '"Kimby Arting Commissions" <adamestela@gmail.com>',
       to: "adamestela@gmail.com",
       subject: "NEW COMMISSION MESSAGE!!",
-      text: message,
+      text: messageText,
       html: messageHtml
   };
 
