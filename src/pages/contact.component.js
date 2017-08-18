@@ -3,6 +3,11 @@ import './contact.component.css';
 import ContactFormContainer from '../units/form/containers/contactForm.container.js';
 
 class Contact extends Component {
+  constructor(props) {
+    super(props);
+    window.scrollTo(0,0);
+  }
+
   render() {
     return(
       <div className="contact-container">

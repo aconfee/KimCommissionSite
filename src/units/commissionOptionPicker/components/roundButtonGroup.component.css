@@ -2,6 +2,8 @@
   position: relative;
   display: inline-block;
 
+  overflow-x: visible;
+
   -webkit-filter: url('#goo');
   filter: url('#goo');
 }
@@ -22,7 +24,7 @@
   top: 1px;
 
   border-radius: 100%;
-  background: #e97b7a;
+  background: #ffd6f4;
 
   -webkit-transition: ease 0.5s;
   transition: ease 0.5s;

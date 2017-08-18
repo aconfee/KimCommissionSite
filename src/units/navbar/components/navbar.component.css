@@ -20,7 +20,9 @@
   z-index: 1;
   top: -250px;
 
-  background-color: #EDEDED;
+  /*background-color: #EDEDED;*/
+  background-color: white;
+  border-bottom: 1px solid #EDEDED;
   opacity: 0;
 
   -webkit-transition: 0.2s;

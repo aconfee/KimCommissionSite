@@ -122,7 +122,7 @@ class InqueryForm extends Component {
       <div className="inquiry-form-container">
         <div className={ "form-container " + this.renderFlip() }>
           <div className="card-front">
-            <p className="header">Estimate: ${ this.props.estimate.total }</p>
+            <p className="header font-color-dark">Estimate: ${ this.props.estimate.total }</p>
             <p className="subheader">This amount is just an initial approximation.</p>
             <p className="front-information">Once you hit send, I&#39;ll look over your details and get back to you within 24 hours!</p>
             <form onSubmit={ this.handleSubmit }>

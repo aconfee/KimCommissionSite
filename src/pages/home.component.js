@@ -12,6 +12,11 @@ import InquiryFormContainer from '../units/form/containers/inquiryForm.container
 import HackyAssModalContainer from '../units/hackyAssModal/hackyAssModal.container.js';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    window.scrollTo(0,0);
+  }
+
   render() {
     return(
       <div>

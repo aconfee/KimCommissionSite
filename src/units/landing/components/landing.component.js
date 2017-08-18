@@ -1,5 +1,6 @@
 import React from 'react';
 import './landing.component.css';
+import { Link } from 'react-router-dom';
 
 function Landing(props) {
   return (
@@ -22,7 +23,7 @@ function Landing(props) {
           <p id="info-header" className="font-color-regular font-size-regular">Reach Out in 5 Clicks</p>
           <p className="font-color-light font-size-small">No commitment, just start a conversation :) Choose the options that best describe what you want below.</p>
           <p className="font-color-light font-size-small">I’ll reach out to you within 24 hours after you send.</p>
-          <p className="font-color-dark font-size-small"><b>Commercial commissions?</b> Click here.</p>
+          <p className="font-color-dark font-size-small"><b>Commercial commissions?</b> <Link to="/contact"><u className="click-here">Click here</u>.</Link></p>
         </div>
       </div>
     </div>

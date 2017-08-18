@@ -43,15 +43,17 @@ img {
 #title {
   position: relative;
 
+  font-weight: 100;
   font-size: 50px;
 }
 
 #subtitle {
   position: relative;
   left: 40px;
-  top: 16px;
+  top: 22px;
   font-size: 40px;
-  font-family: 'Cookie', cursive;
+  font-family: 'La Belle Aurore';
+  color: #ffd6f4;
 }
 
 .landing
@@ -68,7 +70,7 @@ img {
 
 .landing
 .flex-two {
-  max-width: 375px;
+  max-width: 420px;
   line-height: 1.5em;
 }
 
@@ -82,4 +84,12 @@ p {
 .landing
 .flex-two :last-child {
   margin-top: 50px;
+}
+
+.click-here {
+  text-decoration-color: #95989A;
+}
+
+.click-here:hover {
+  cursor: pointer;
 }

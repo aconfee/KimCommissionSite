@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './faq.component.css';
 
 class Faq extends Component {
+  constructor(props) {
+    super(props);
+    window.scrollTo(0,0);
+  }
+  
   render() {
     return(
       <div className="faq-container">

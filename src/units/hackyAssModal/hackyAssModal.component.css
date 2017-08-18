@@ -15,15 +15,15 @@
 
 .hacky-ass-modal
 .tooltip-icon {
-  width: 26px;
-  height: 31px;
+  width: 25px;
+  height: 32px;
   border-radius: 100%;
   background-color: white;
   font-size: 20px;
   color: #454343;
   margin: 0 auto;
-  padding-left: 14px;
-  padding-top: 9px;
+  padding-left: 15px;
+  padding-top: 8px;
 }
 
 .hacky-ass-modal

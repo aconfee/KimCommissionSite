@@ -13,15 +13,21 @@ import Work from './work.component.js';
 import Contact from './contact.component.js';
 
 class Main extends Component {
+
+  scrollToTop = () => {
+    console.log('scroll called');
+    window.scrollTo(0, 0);
+  };
+
   render(){
     return(
       <div>
         <Navbar />
 
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Home} onEnter={this.scrollToTop} />
         <Route path="/faq" component={Faq} />
         <Route path="/work" component={Work} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/contact" component={Contact} onEnter={this.scrollToTop} />
 
         { Footer() }
       </div>

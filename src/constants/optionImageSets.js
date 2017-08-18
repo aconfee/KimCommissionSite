@@ -1,8 +1,8 @@
 const OPTION_IMAGE_SETS = {
   FRAMING: [
-    "./images/optionImageSets/frame/bust.jpg",
-    "./images/optionImageSets/frame/half.jpg",
-    "./images/optionImageSets/frame/full.jpg"
+    "./images/optionImageSets/frame/bust.png",
+    "./images/optionImageSets/frame/half.png",
+    "./images/optionImageSets/frame/full.png"
   ],
   LEVEL_OF_DETAIL: [
     "./images/optionImageSets/detail/sketch.jpg",

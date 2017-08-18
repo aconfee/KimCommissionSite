@@ -26,9 +26,7 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <div className={ "navbar-background " + this.animateOpen() }>
-          <div className="elipse"></div>
-        </div>
+        <div className={ "navbar-background " + this.animateOpen() }></div>
         <div className="navbar ">
           <div className="content">
             <Link to="/" onClick={ this.handleLinkClick }>
