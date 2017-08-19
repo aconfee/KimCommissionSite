@@ -20,8 +20,6 @@ class ImageCarouselCoinflip extends Component {
     // If index changed, animate.
     if(this.props.activeIndex !== nextProps.activeIndex){
       this.playAnimation(nextProps);
-      this.timeoutId = setTimeout(function() { this.resetBackImage(); }.bind(this), 750);
-      setTimeout(function() { this.resetAnimation(); }.bind(this), 1000);
     } else {
       // If images changed (but not index), set.
       this.setState({
@@ -34,27 +32,29 @@ class ImageCarouselCoinflip extends Component {
   playAnimation = (nextProps) => {
     const { images, activeIndex } = this.props;
 
+    // 1. Prepare back image for flip.
+    this.setState({
+      backImageUrl: images[nextProps.activeIndex]
+    });
+
+    // 2. Flip
     const animationClass = activeIndex < nextProps.activeIndex
       ? "animate-flip-right"
       : "animate-flip-left";
 
-    this.setState({
-      frontImageUrl: images[activeIndex],
-      backImageUrl: images[nextProps.activeIndex],
-      animationClass: animationClass
-    });
+    setTimeout(function() {
+      this.setState({ animationClass: animationClass });
+    }.bind(this), 100);
 
-  }
+    // 3. Prepare front image for animation reset.
+    setTimeout(function() {
+      this.setState({ frontImageUrl: images[nextProps.activeIndex] });
+    }.bind(this), 750);
 
-  resetBackImage = () => {
-    const { images, activeIndex } = this.props;
-    this.setState({ frontImageUrl: images[activeIndex] });
-
-    clearTimeout(this.timeoutId);
-  }
-
-  resetAnimation = () => {
-    this.setState({ animationClass: "" });
+    // 4. Remove animation class (prepare for next play).
+    setTimeout(function() {
+      this.setState({ animationClass: "" });
+    }.bind(this), 1000);
   }
 
   render() {
