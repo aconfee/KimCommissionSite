@@ -51,11 +51,14 @@ class ImageCarouselCoinflip extends Component {
     const { images, activeIndex } = this.props;
 
     console.log(`Reseting animation. Front ${activeIndex}. Back ${activeIndex}.`);
-    this.setState({
-      frontImageUrl: images[activeIndex],
-      backImageUrl: images[activeIndex],
-      animationClass: ""
-    });
+    this.setState({ frontImageUrl: images[activeIndex] });
+
+    // Make sure reset image has rendered first before flipping to avoid glitch.
+    var flipTimeoutId = setTimeout(function() {
+      console.log('reseting flip');
+      this.setState({ animationClass: "" });
+      clearTimeout(flipTimeoutId);
+    }.bind(this), 100);
 
     clearTimeout(this.timeoutId);
   }
