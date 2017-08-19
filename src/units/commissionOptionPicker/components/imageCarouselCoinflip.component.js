@@ -21,7 +21,7 @@ class ImageCarouselCoinflip extends Component {
     // If index changed, animate.
     if(this.props.activeIndex !== nextProps.activeIndex){
       this.playAnimation(nextProps);
-      this.timeoutId = setTimeout(function() { this.resetAnimtion(); }.bind(this), 10000); // 750 is tied to the flip animation duration.
+      this.timeoutId = setTimeout(function() { this.resetAnimtion(); }.bind(this), 5000); // 750 is tied to the flip animation duration.
     } else {
       // If images changed (but not index), set.
       this.setState({
@@ -58,7 +58,7 @@ class ImageCarouselCoinflip extends Component {
       console.log('reseting flip');
       this.setState({ animationClass: "" });
       clearTimeout(flipTimeoutId);
-    }.bind(this), 100);
+    }.bind(this), 2000);
 
     clearTimeout(this.timeoutId);
   }
