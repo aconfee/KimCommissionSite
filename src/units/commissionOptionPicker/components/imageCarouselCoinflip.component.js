@@ -17,11 +17,11 @@ class ImageCarouselCoinflip extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('Receiving props.');
     // If index changed, animate.
     if(this.props.activeIndex !== nextProps.activeIndex){
       this.playAnimation(nextProps);
-      this.timeoutId = setTimeout(function() { this.resetAnimtion(); }.bind(this), 5000); // 750 is tied to the flip animation duration.
+      this.timeoutId = setTimeout(function() { this.resetBackImage(); }.bind(this), 750);
+      setTimeout(function() { this.resetAnimation(); }.bind(this), 1000);
     } else {
       // If images changed (but not index), set.
       this.setState({
@@ -38,7 +38,6 @@ class ImageCarouselCoinflip extends Component {
       ? "animate-flip-right"
       : "animate-flip-left";
 
-    console.log(`Playing animation. Front ${activeIndex}. Back ${nextProps.activeIndex}.`);
     this.setState({
       frontImageUrl: images[activeIndex],
       backImageUrl: images[nextProps.activeIndex],
@@ -47,25 +46,19 @@ class ImageCarouselCoinflip extends Component {
 
   }
 
-  resetAnimtion = () => {
+  resetBackImage = () => {
     const { images, activeIndex } = this.props;
-
-    console.log(`Reseting animation. Front ${activeIndex}. Back ${activeIndex}.`);
     this.setState({ frontImageUrl: images[activeIndex] });
-
-    // Make sure reset image has rendered first before flipping to avoid glitch.
-    var flipTimeoutId = setTimeout(function() {
-      console.log('reseting flip');
-      this.setState({ animationClass: "" });
-      clearTimeout(flipTimeoutId);
-    }.bind(this), 2000);
 
     clearTimeout(this.timeoutId);
   }
 
+  resetAnimation = () => {
+    this.setState({ animationClass: "" });
+  }
+
   render() {
     const { animationClass, frontImageUrl, backImageUrl } = this.state;
-    console.log(`Rendering coin. ${animationClass}, ${frontImageUrl}, ${backImageUrl}.`)
 
     return (
       <div className="option-display-container">
