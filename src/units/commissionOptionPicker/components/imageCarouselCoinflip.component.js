@@ -17,10 +17,11 @@ class ImageCarouselCoinflip extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log('Receiving props.');
     // If index changed, animate.
     if(this.props.activeIndex !== nextProps.activeIndex){
       this.playAnimation(nextProps);
-      this.timeoutId = setTimeout(function() { this.resetAnimtion(); }.bind(this), 750); // 750 is tied to the flip animation duration.
+      this.timeoutId = setTimeout(function() { this.resetAnimtion(); }.bind(this), 10000); // 750 is tied to the flip animation duration.
     } else {
       // If images changed (but not index), set.
       this.setState({
@@ -37,6 +38,7 @@ class ImageCarouselCoinflip extends Component {
       ? "animate-flip-right"
       : "animate-flip-left";
 
+    console.log(`Playing animation. Front ${activeIndex}. Back ${nextProps.activeIndex}.`);
     this.setState({
       frontImageUrl: images[activeIndex],
       backImageUrl: images[nextProps.activeIndex],
@@ -48,6 +50,7 @@ class ImageCarouselCoinflip extends Component {
   resetAnimtion = () => {
     const { images, activeIndex } = this.props;
 
+    console.log(`Reseting animation. Front ${activeIndex}. Back ${activeIndex}.`);
     this.setState({
       frontImageUrl: images[activeIndex],
       backImageUrl: images[activeIndex],
@@ -58,17 +61,17 @@ class ImageCarouselCoinflip extends Component {
   }
 
   render() {
-
     const { animationClass, frontImageUrl, backImageUrl } = this.state;
+    console.log(`Rendering coin. ${animationClass}, ${frontImageUrl}, ${backImageUrl}.`)
 
     return (
       <div className="option-display-container">
         <div className={ "flip-container " + animationClass }>
           <div className="front">
-            <img className="display-image" src={ frontImageUrl } alt="level of detail display" title="level of detail display" />
+            <img className="display-image" src={ frontImageUrl } alt="option display" title="option display" />
           </div>
           <div className="back">
-            <img className="display-image" src={ backImageUrl } alt="level of detail display" title="level of detail display" />
+            <img className="display-image" src={ backImageUrl } alt="option display" title="options display" />
           </div>
         </div>
       </div>

@@ -115,14 +115,16 @@
 }
 
 .option-display-container
-.animate-flip-right, .animate-flip-left {
+.animate-flip-right,
+.option-display-container
+.animate-flip-left {
   position: relative;
 
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 
-  -webkit-animation-duration: 0.75;
-  animation-duration: 0.75s;
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
 
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
