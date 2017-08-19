@@ -21,7 +21,8 @@ const OPTION_IMAGE_SETS = {
     "./images/optionImageSets/characters/two.png",
     "./images/optionImageSets/characters/three.png",
     "./images/optionImageSets/characters/four.png",
-    "./images/optionImageSets/characters/fiveplus.png"]
+    "./images/optionImageSets/characters/fiveplus.png"
+  ]
 };
 
 export default OPTION_IMAGE_SETS;
