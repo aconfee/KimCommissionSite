@@ -51,17 +51,17 @@ class ImageCarouselCoinflip extends Component {
 
     setTimeout(function() {
       this.setState({ animationClass: animationClass });
-    }.bind(this), 250);
+    }.bind(this), 50);
 
     // 3. Prepare front image for animation reset.
     setTimeout(function() {
       this.setState({ frontImageUrl: images[nextProps.activeIndex] });
-    }.bind(this), 1000);
+    }.bind(this), 800);
 
     // 4. Remove animation class (prepare for next play).
     setTimeout(function() {
       this.setState({ animationClass: "" });
-    }.bind(this), 1500);
+    }.bind(this), 850);
   }
 
   render() {
