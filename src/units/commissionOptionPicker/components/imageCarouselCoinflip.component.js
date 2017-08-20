@@ -14,23 +14,18 @@ class ImageCarouselCoinflip extends Component {
       backImageUrl: images[activeIndex],
       animationClass: ""
     };
+
+    this.imageCache = [];
   }
 
   componentDidMount = () => {
-    const { images, activeIndex } = this.props;
+    const { images } = this.props;
 
     // Preload all images for seamless animation.
     for(let i = 0; i < images.length; i++){
-      var preload = new Image();
-      preload.src = images[i];
-      this.setState({ frontImageUrl: images[i] });
+      this.imageCache.push(new Image());
+      this.imageCache[i].src = images[i];
     }
-
-    this.setState({
-      frontImageUrl: images[activeIndex],
-      backImageUrl: images[activeIndex],
-      animationClass: ""
-    });
   }
 
   componentWillReceiveProps(nextProps) {
