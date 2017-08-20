@@ -61,7 +61,7 @@ class ImageCarouselCoinflip extends Component {
     // 4. Remove animation class (prepare for next play).
     setTimeout(function() {
       this.setState({ animationClass: "" });
-    }.bind(this), 850);
+    }.bind(this), 1000);
   }
 
   render() {
