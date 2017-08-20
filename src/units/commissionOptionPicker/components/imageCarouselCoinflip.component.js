@@ -9,6 +9,13 @@ class ImageCarouselCoinflip extends Component {
 
     const { images, activeIndex } = this.props;
 
+    // Preload all images for seamless animation.
+    for(let i = 0; i < this.props.images.length; i++){
+      var preload = new Image();
+      preload.src = this.props.images[i];
+      this.setState({ frontImageUrl: this.props.images[i] });
+    }
+
     this.state = {
       frontImageUrl: images[activeIndex],
       backImageUrl: images[activeIndex],
