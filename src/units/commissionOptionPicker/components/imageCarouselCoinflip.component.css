@@ -123,8 +123,8 @@
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 
-  -webkit-animation-duration: 0.75s;
-  animation-duration: 0.75s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
 
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;

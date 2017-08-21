@@ -17,7 +17,7 @@ class GalleryModal extends Component {
   }
 
   componentWillReceiveProps = (nextProps) => {
-    if(nextProps.index) {
+    if(typeof(nextProps.index) !== "undefined") {
       this.setState({ activeIndex: nextProps.index });
     }
   }

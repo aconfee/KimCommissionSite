@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './imageCarouselCoinflip.component.css';
 
+
+import spriteSheet from '../detail_spritesheet.png';
+
+//var backgroundImagePositionStyle = { backgroundPosition: "0px 0px" };
+
 class ImageCarouselCoinflip extends Component {
 
   constructor(props) {
@@ -12,7 +17,19 @@ class ImageCarouselCoinflip extends Component {
     this.state = {
       frontImageUrl: images[activeIndex],
       backImageUrl: images[activeIndex],
-      animationClass: ""
+      animationClass: "",
+      indexFront: 0,
+      indexBack: 0,
+      backgroundImageStyleBack: {
+        backgroundImage: `url(${spriteSheet})`,
+        backgroundPosition: "0px, 0px"
+      },
+      backgroundImageStyleFront: {
+        backgroundImage: `url(${spriteSheet})`,
+        backgroundPosition: "0px, 0px"
+      },
+      frontPosition: 0,
+      backPosition: 0
     };
 
     this.imageCache = [];
@@ -45,9 +62,11 @@ class ImageCarouselCoinflip extends Component {
     const { images, activeIndex } = this.props;
 
     // 1. Prepare back image for flip.
-    this.setState({
-      backImageUrl: images[nextProps.activeIndex]
-    });
+    let nextPosition = nextProps.activeIndex * -450;
+    /*(this.setState({
+      backImageUrl: images[nextProps.activeIndex],
+      backPosition: nextPosition
+    });*/
 
     // 2. Flip
     const animationClass = activeIndex < nextProps.activeIndex
@@ -55,18 +74,25 @@ class ImageCarouselCoinflip extends Component {
       : "animate-flip-left";
 
     setTimeout(function() {
-      this.setState({ animationClass: animationClass });
+      this.setState({
+        animationClass: animationClass,
+        backPosition: nextPosition
+      });
     }.bind(this), 50);
 
     // 3. Prepare front image for animation reset.
     setTimeout(function() {
-      this.setState({ frontImageUrl: images[nextProps.activeIndex] });
-    }.bind(this), 800);
+      this.setState({
+        frontImageUrl: images[nextProps.activeIndex],
+        frontPosition: nextPosition,
+        animationClass: ""
+      });
+    }.bind(this), 1050);
 
     // 4. Remove animation class (prepare for next play).
     setTimeout(function() {
-      this.setState({ animationClass: "" });
-    }.bind(this), 1000);
+      //this.setState({ animationClass: "" });
+    }.bind(this), 2000);
   }
 
   render() {
@@ -75,11 +101,19 @@ class ImageCarouselCoinflip extends Component {
     return (
       <div className="option-display-container">
         <div className={ "flip-container " + animationClass }>
-          <div className="front">
-            <img className="display-image" src={ frontImageUrl } alt="option display" title="option display" />
+          <div className="front" style={{
+            backgroundImage: `url(${spriteSheet})`,
+            backgroundSize: "500% 100%",
+            backgroundPosition: this.state.frontPosition + "px, 0px"
+          }}
+          >
+
           </div>
-          <div className="back">
-            <img className="display-image" src={ backImageUrl } alt="option display" title="options display" />
+          <div className="back" style={{
+            backgroundImage: `url(${spriteSheet})`,
+            backgroundPosition: this.state.backPosition + "px, 0px"
+          }}>
+
           </div>
         </div>
       </div>
