@@ -62,7 +62,7 @@ class ImageCarouselCoinflip extends Component {
     const { images, activeIndex } = this.props;
 
     // 1. Prepare back image for flip.
-    let nextPosition = nextProps.activeIndex * -450;
+    let nextPosition = nextProps.activeIndex * -300;
     /*(this.setState({
       backImageUrl: images[nextProps.activeIndex],
       backPosition: nextPosition
@@ -111,6 +111,7 @@ class ImageCarouselCoinflip extends Component {
           </div>
           <div className="back" style={{
             backgroundImage: `url(${spriteSheet})`,
+            backgroundSize: "500% 100%",
             backgroundPosition: this.state.backPosition + "px, 0px"
           }}>
 
