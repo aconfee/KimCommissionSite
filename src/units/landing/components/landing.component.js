@@ -17,7 +17,7 @@ function Landing(props) {
 
       <div className="flex-container">
         <div className="flex-one">
-          <img src="./images/details-cover.jpg" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
+          <img src="./images/details-cover.png" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
         </div>
         <div className="flex-two">
           <p id="info-header" className="font-color-regular font-size-regular">Reach Out in 5 Clicks</p>

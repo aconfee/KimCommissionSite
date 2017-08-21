@@ -145,7 +145,7 @@ class ContactForm extends Component {
             </form>
           </div>
           <div className="card-back">
-            <img className="email-sent-image" src="./images/logo.jpg" alt="Thank you. Message sent." title="kimbyarting Peter the Duke. Thank you email sent." />
+            <img className="email-sent-image" src="./images/email-sent.jpg" alt="Thank you. Message sent." title="kimbyarting Peter the Duke. Thank you email sent." />
             <p className="header back-header">Thank you!</p>
             <p className="back-information">Your message has been sent!</p>
             <p className="back-information">I&#39;ll follow up within 24 hours :)</p>
