@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Thumbnail({ url, onClick }) {
 
   const handleClick = () => {
-    if(this.props.onClick) {
+    if(onClick) {
       onClick(url);
     }
   };

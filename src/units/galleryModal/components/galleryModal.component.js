@@ -17,7 +17,7 @@ class GalleryModal extends Component {
   }
 
   componentWillReceiveProps = (nextProps) => {
-    if(this.nextProps.index) {
+    if(nextProps.index) {
       this.setState({ activeIndex: nextProps.index });
     }
   }
@@ -42,7 +42,7 @@ class GalleryModal extends Component {
     if(!show) return null;
 
     return (
-      <div className="overlay">
+      <div id="gallery-modal" className="overlay">
         <div className="gallery-close" onClick={ this.props.onClick }>
           <div className="line top"></div>
           <div className="line bottom"></div>

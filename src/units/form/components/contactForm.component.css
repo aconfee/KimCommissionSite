@@ -380,6 +380,7 @@ input[type=submit]:hover {
 }
 
 @media only screen and (min-width: 750px) {
+  .contact-form-container
   .loader {
     width: 40px;
     height: 40px;
