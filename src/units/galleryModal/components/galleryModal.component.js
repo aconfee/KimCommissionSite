@@ -36,10 +36,14 @@ class GalleryModal extends Component {
     this.setState({ activeIndex });
   };
 
-  render() {
-    const { show, images } = this.props;
+  renderCurrentImage = () => {
+    if(this.state.activeIndex >= this.props.images.length) return null;
 
-    if(!show) return null;
+    return ( <img src={ this.props.images[this.state.activeIndex] } alt="kimbyarting previous work" title="kimby arting previous work example" /> )
+  }
+
+  render() {
+    if(!this.props.show || this.props.images.length === 0) return null;
 
     return (
       <div id="gallery-modal" className="overlay">
@@ -51,7 +55,7 @@ class GalleryModal extends Component {
 
         </div>
         <div className="gallery-modal-continer">
-          <img src={ images[this.state.activeIndex] } alt="kimbyarting previous work" title="kimby arting previous work example" />
+          { this.renderCurrentImage() }
         </div>
         <div className="next" style={ arrowImageStyle } onClick={ this.handleNext }>
 

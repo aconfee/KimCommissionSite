@@ -36,8 +36,8 @@ const closeGalleryModal = (uiState, action) => {
     ...uiState,
     modals: {
       showGalleryModal: false,
-      galleryModalInitialIndex: -1,
-      galleryModalImages: null
+      galleryModalInitialIndex: 0,
+      galleryModalImages: []
     }
   }
 };
