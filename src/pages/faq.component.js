@@ -6,12 +6,12 @@ class Faq extends Component {
     super(props);
     window.scrollTo(0,0);
   }
-  
+
   render() {
     return(
       <div className="faq-container">
         <div className="faq-image">
-          <img src="./images/details-cover.jpg" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
+          <img src="./images/details-cover.png" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
         </div>
         <div className="faq-entries">
           <p className="header">What is your commission process?</p>

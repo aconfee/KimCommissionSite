@@ -12,7 +12,7 @@ class Contact extends Component {
     return(
       <div className="contact-container">
         <div className="contact-image">
-          <img src="./images/details-cover.jpg" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
+          <img src="./images/details-cover.png" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
         </div>
         <ContactFormContainer />
       </div>
