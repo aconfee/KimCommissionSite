@@ -314,7 +314,7 @@ input[type=submit]:hover {
       transform: rotate(360deg);
     }
 }
-
+.inquiry-form-container
 .loader {
     border: 5px solid #f3f3f3; /* Light grey */
     border-top: 5px solid #555; /* Dark grey */

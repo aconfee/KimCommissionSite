@@ -5,9 +5,16 @@ p {
 
 .landing
 .flex-container {
+  display: -webkit-flex;
   display: flex;
+
+  -webkit-flex-direction: column;
   flex-direction: column;
+
+  -webkit-justify-content: space-evenly;
   justify-content: space-evenly;
+
+  -webkit-align-items: center;
   align-items: center;
 
   margin-bottom: 150px;
@@ -18,28 +25,33 @@ p {
 @media only screen and (min-width: 800px) {
   .landing
   .flex-container {
+    -webkit-flex-direction: row;
     flex-direction: row;
     margin-bottom: 250px;
   }
 }
 
+.landing
 .flex-self-portrait {
   width: 75%;
   max-width: 700px;
 }
 
 @media only screen and (min-width: 800px) {
+  .landing
   .flex-self-portrait {
     width: 50%;
   }
 }
 
+.landing
 .flex-self-portrait
 img {
   width: 100%;
   max-width: 100%;
 }
 
+.landing
 #title {
   position: relative;
 
@@ -47,6 +59,7 @@ img {
   font-size: 50px;
 }
 
+.landing
 #subtitle {
   position: relative;
   left: 40px;
@@ -86,10 +99,12 @@ p {
   margin-top: 50px;
 }
 
+.landing
 .click-here {
   text-decoration-color: #95989A;
 }
 
+.landing
 .click-here:hover {
   cursor: pointer;
 }
