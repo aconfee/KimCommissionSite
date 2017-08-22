@@ -1,5 +1,11 @@
+.contact-section {
+  max-width: 2500px;
+  margin: 0 auto;
+}
+
 .contact-container {
   display: flex;
+  max-width: 2500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -8,7 +14,7 @@
 @media only screen and (min-width: 1350px) {
   .contact-container {
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: flex-start;
   }
 }

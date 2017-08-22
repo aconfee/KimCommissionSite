@@ -26,13 +26,13 @@
 .card-back{
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   text-align: center;
 
-  -ms-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  transform: rotateY(180deg);
+  -ms-transform: rotate(180deg) translateY(-50%);
+  -webkit-transform: rotate(180deg) translateY(-50%);
+  transform: rotateY(180deg) translateY(-50%);
 }
 
 @-webkit-keyframes flip-right {

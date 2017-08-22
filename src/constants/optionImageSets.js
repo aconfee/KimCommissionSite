@@ -1,28 +1,12 @@
 const OPTION_IMAGE_SETS = {
-  FRAMING: [
-    "./images/optionImageSets/frame/bust.png",
-    "./images/optionImageSets/frame/half.png",
-    "./images/optionImageSets/frame/full.png"
-  ],
-  LEVEL_OF_DETAIL: [
-    "./images/optionImageSets/detail/sketch.png",
-    "./images/optionImageSets/detail/flat.png",
-    "./images/optionImageSets/detail/painterly.png",
-    "./images/optionImageSets/detail/illustrative.png"
-  ],
-  BACKGROUND: [
-    "./images/optionImageSets/background/flat_color.jpg",
-    "./images/optionImageSets/background/texture_pattern.jpg",
-    "./images/optionImageSets/background/props.jpg"
-  ],
-
-  NUMBER_OF_CHARACTERS: [
-    "./images/optionImageSets/characters/one.png",
-    "./images/optionImageSets/characters/two.png",
-    "./images/optionImageSets/characters/three.png",
-    "./images/optionImageSets/characters/four.png",
-    "./images/optionImageSets/characters/fiveplus.png"
-  ]
+  FRAMING: "./images/optionImageSets/frame_spritesheet.png",
+  LEVEL_OF_DETAIL: "./images/optionImageSets/detail_spritesheet.png",
+  BACKGROUND: "./images/optionImageSets/background_spritesheet.png",
+  NUMBER_OF_CHARACTERS: "./images/optionImageSets/number_of_characters_spritesheet.png",
+  FRAMING_LARGE: "./images/optionImageSets/frame_spritesheet_lg.png",
+  LEVEL_OF_DETAIL_LARGE: "./images/optionImageSets/detail_spritesheet_lg.png",
+  BACKGROUND_LARGE: "./images/optionImageSets/background_spritesheet_lg.png",
+  NUMBER_OF_CHARACTERS_LARGE: "./images/optionImageSets/number_of_characters_spritesheet_lg.png"
 };
 
 export default OPTION_IMAGE_SETS;

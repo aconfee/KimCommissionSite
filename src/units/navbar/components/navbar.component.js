@@ -30,7 +30,7 @@ class Navbar extends Component {
         <div className="navbar ">
           <div className="content">
             <Link to="/" onClick={ this.handleLinkClick }>
-              <img className="navbar-logo" src="./images/logo.jpg" alt="kimbyarting logo" title="kimbyarting logo" />
+              <img className="navbar-logo" src="./images/logo.png" alt="kimbyarting logo" title="kimbyarting logo" />
             </Link>
             <div className={ "navbar-links-container " + this.animateOpen() } onClick={ this.handleLinkClick }>
               { Navlink({ text: "F.A.Q.", url: "/faq" }) }

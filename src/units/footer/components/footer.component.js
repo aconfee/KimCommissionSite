@@ -7,34 +7,14 @@ function Footer(props) {
     <div className="footer">
       <span className="column">
         <div className="social-column-container">
-          <img className="logo" src="./images/logo.jpg" alt="kimbyarting logo" title="kimbyarting logo" />
+          <img className="logo" src="./images/logo.png" alt="kimbyarting logo" title="kimbyarting logo" />
           <p className="font-size-regular font-color-dark">Social</p>
           <div className="social-icon-container">
-            <div className="social-icon">
-              <a href="https://www.instagram.com/kimbyarting/" target="_blank" rel="noopener noreferrer">
-                <img className="social-image" src="./images/social_instagram.png" alt="kimbyarting instagram link" title="kimbyarting instagram" />
-              </a>
-            </div>
-            <div className="social-icon">
-              <a href="https://www.artstation.com/kimbyarting" target="_blank" rel="noopener noreferrer">
-                <img className="social-image" src="./images/social_artstation.png" alt="kimbyarting artstation link" title="kimbyarting artstation" />
-              </a>
-            </div>
-            <div className="social-icon">
-              <a href="https://www.facebook.com/kimbyarting/" target="_blank" rel="noopener noreferrer">
-                <img className="social-image" src="./images/social_facebook.png" alt="kimbyarting facebook link" title="kimbyarting facebook" />
-              </a>
-            </div>
-            <div className="social-icon">
-              <a href="https://twitter.com/kimbyarting" target="_blank" rel="noopener noreferrer">
-                <img className="social-image" src="./images/social_twitter.png" alt="kimbyarting twitter link" title="kimbyarting twitter" />
-              </a>
-            </div>
-            <div className="social-icon">
-              <a href="http://kimbyarting.tumblr.com/" target="_blank" rel="noopener noreferrer">
-                <img className="social-image" src="./images/social_tumblr.png" alt="kimbyarting tumblr link" title="kimbyarting tumblr" />
-              </a>
-            </div>
+            <a className="social-icon instagram" href="https://www.instagram.com/kimbyarting/" target="_blank" rel="noopener noreferrer" />
+            <a className="social-icon artstation" href="https://www.artstation.com/kimbyarting" target="_blank" rel="noopener noreferrer" />
+            <a className="social-icon facebook" href="https://www.facebook.com/kimbyarting/" target="_blank" rel="noopener noreferrer" />
+            <a className="social-icon twitter" href="https://twitter.com/kimbyarting" target="_blank" rel="noopener noreferrer" />
+            <a className="social-icon tumblr" href="http://kimbyarting.tumblr.com/" target="_blank" rel="noopener noreferrer" />
           </div>
         </div>
       </span>

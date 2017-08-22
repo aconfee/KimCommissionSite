@@ -4,15 +4,23 @@ p {
 }
 
 .landing
+.flex-section {
+  max-width: 2200px;
+  margin: 0 auto;
+}
+
+.landing
 .flex-container {
   display: -webkit-flex;
   display: flex;
 
+  max-width: 2200px;
+
   -webkit-flex-direction: column;
   flex-direction: column;
 
-  -webkit-justify-content: space-evenly;
-  justify-content: space-evenly;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
 
   -webkit-align-items: center;
   align-items: center;
@@ -60,6 +68,13 @@ img {
   font-size: 50px;
 }
 
+@media only screen and (min-width: 2000px) {
+  .landing
+  #title {
+    font-size: 70px;
+  }
+}
+
 .landing
 #subtitle {
   position: relative;
@@ -68,6 +83,13 @@ img {
   font-size: 40px;
   font-family: 'La Belle Aurore';
   color: #ffd6f4;
+}
+
+@media only screen and (min-width: 2000px) {
+  .landing
+  #subtitle {
+    font-size: 60px;
+  }
 }
 
 .landing
@@ -86,6 +108,13 @@ img {
 .flex-two {
   max-width: 420px;
   line-height: 1.5em;
+}
+
+@media only screen and (min-width: 2000px) {
+  .landing
+  .flex-two {
+    max-width: 520px;
+  }
 }
 
 .landing
@@ -108,4 +137,20 @@ p {
 .landing
 .click-here:hover {
   cursor: pointer;
+}
+
+@media only screen and (min-width: 2000px) {
+  .landing
+  .flex-two
+  .font-size-small {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .landing
+  .flex-two
+  .font-size-regular {
+    font-size: 20px;
+  }
 }

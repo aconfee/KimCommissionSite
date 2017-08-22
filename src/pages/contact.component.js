@@ -10,11 +10,13 @@ class Contact extends Component {
 
   render() {
     return(
-      <div className="contact-container">
-        <div className="contact-image">
-          <img src="./images/details-cover.png" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
+      <div className="contact-section">
+        <div className="contact-container">
+          <div className="contact-image">
+            <img src="./images/details-cover.png" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
+          </div>
+          <ContactFormContainer />
         </div>
-        <ContactFormContainer />
       </div>
     );
   }

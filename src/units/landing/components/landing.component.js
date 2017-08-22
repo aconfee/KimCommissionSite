@@ -5,25 +5,27 @@ import { Link } from 'react-router-dom';
 function Landing(props) {
   return (
     <div className="landing">
-      <div className="flex-container">
-        <div>
-          <p id="subtitle" className="font-color-regular">KimbyArting</p>
-          <p id="title" className="font-color-dark">Commissions</p>
+      <div className="flex-section">
+        <div className="flex-container">
+          <div>
+            <p id="subtitle" className="font-color-regular">KimbyArting</p>
+            <p id="title" className="font-color-dark">Commissions</p>
+          </div>
+          <div className="flex-self-portrait">
+            <img src="./images/kim-cover.jpg" alt="kim greenough" title="kim greenough" />
+          </div>
         </div>
-        <div className="flex-self-portrait">
-          <img src="./images/kim-cover.jpg" alt="kim greenough" title="kim greenough" />
-        </div>
-      </div>
 
-      <div className="flex-container">
-        <div className="flex-one">
-          <img src="./images/details-cover.png" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
-        </div>
-        <div className="flex-two">
-          <p id="info-header" className="font-color-regular font-size-regular">Reach Out in 5 Clicks</p>
-          <p className="font-color-light font-size-small">No commitment, just start a conversation :) Choose the options that best describe what you want below.</p>
-          <p className="font-color-light font-size-small">I’ll reach out to you within 24 hours after you send.</p>
-          <p className="font-color-dark font-size-small"><b>Commercial commissions?</b> <Link to="/contact"><u className="click-here">Click here</u>.</Link></p>
+        <div className="flex-container">
+          <div className="flex-one">
+            <img src="./images/details-cover.png" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
+          </div>
+          <div className="flex-two">
+            <p id="info-header" className="font-color-regular font-size-regular">Reach Out in 5 Clicks</p>
+            <p className="font-color-light font-size-small">No commitment, just start a conversation :) Choose the options that best describe what you want below.</p>
+            <p className="font-color-light font-size-small">I’ll reach out to you within 24 hours after you send.</p>
+            <p className="font-color-dark font-size-small"><b>Commercial commissions?</b> <Link to="/contact"><u className="click-here">Click here</u>.</Link></p>
+          </div>
         </div>
       </div>
     </div>

@@ -152,6 +152,9 @@ p {
   margin-right: 10px;
 
   border-radius: 50%;
+
+  background-image: url("../social_icons_spritesheet.png");
+  background-size: 250px 50px;
 }
 
 .footer
@@ -163,6 +166,31 @@ p {
 .social-image {
   width: 100%;
   max-width: 100%;
+}
+
+.footer
+.instagram {
+  background-position: 0px 0px;
+}
+
+.footer
+.artstation {
+  background-position: -50px 0px;
+}
+
+.footer
+.facebook {
+  background-position: -100px 0px;
+}
+
+.footer
+.twitter {
+  background-position: -150px 0px;
+}
+
+.footer
+.tumblr {
+  background-position: -200px 0px;
 }
 
 .footer

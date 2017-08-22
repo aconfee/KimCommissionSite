@@ -34,24 +34,32 @@ class Home extends Component {
             <CommissionOptionPicker
               name={ NAMES.LEVEL_OF_DETAIL }
               text="How much detail do you want?"
-              images={ IMAGES.LEVEL_OF_DETAIL } />
+              spriteSheet={ IMAGES.LEVEL_OF_DETAIL }
+              spriteSheetLarge={ IMAGES.LEVEL_OF_DETAIL_LARGE }
+              length={4} />
 
             <CommissionOptionPicker
               name={ NAMES.FRAMING }
               text="How should it be framed?"
-              images={ IMAGES.FRAMING } />
+              spriteSheet={ IMAGES.FRAMING }
+              spriteSheetLarge={ IMAGES.FRAMING_LARGE }
+              length={3} />
 
             <CommissionOptionPicker
               name={ NAMES.NUMBER_OF_CHARACTERS }
               text="How many characters do you want?"
-              images={ IMAGES.NUMBER_OF_CHARACTERS } />
+              spriteSheet={ IMAGES.NUMBER_OF_CHARACTERS }
+              spriteSheetLarge={ IMAGES.NUMBER_OF_CHARACTERS_LARGE }
+              length={5} />
 
           </EstimateScrollTrigger>
 
           <CommissionOptionPicker
             name={ NAMES.BACKGROUND }
             text="What type of background do you want?"
-            images={ IMAGES.BACKGROUND } />
+            spriteSheet={ IMAGES.BACKGROUND }
+            spriteSheetLarge={ IMAGES.BACKGROUND_LARGE }
+            length={3} />
 
         </div>
 

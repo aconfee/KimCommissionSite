@@ -39,8 +39,10 @@
 .option-selectors {
   position: relative;
   z-index: 1;
+  margin: 0 auto;
 }
 
 .option-selector-container {
+  margin: 0 auto;
   margin-bottom: 130px;
 }

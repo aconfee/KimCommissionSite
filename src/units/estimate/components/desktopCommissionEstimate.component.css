@@ -32,6 +32,13 @@
   }
 }
 
+@media only screen and (min-width: 2500px) {
+  .desktop-estimate {
+    left: 50%;
+    transform: translateX(600px);
+  }
+}
+
 .above-boundry {
   top: 84px;
   bottom: auto;

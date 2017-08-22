@@ -23,27 +23,28 @@ class OptionPicker extends Component {
 
   render() {
 
-    const { images, text = "" } = this.props;
+    const { spriteSheet, spriteSheetLarge, length, text = "" } = this.props;
     const { activeIndex } = this.state;
 
     return (
       <div className="option-selector-container">
 
-        <ImageCarouselCoinflip images={ images } activeIndex={ activeIndex }/>
+        <ImageCarouselCoinflip spriteSheet={ spriteSheet } spriteSheetLarge={ spriteSheetLarge } activeIndex={ activeIndex }/>
 
         <p className="font-size-small font-color-dark description-text">{ text }</p>
-        <span className="font-size-small font-color-light buttons-before">$</span>
+        <span className="font-color-light buttons-before">$</span>
 
-        <RoundButtonGroup length={ images.length } onClick={ this.handleClick }/>
+        <RoundButtonGroup length={ length } onClick={ this.handleClick }/>
 
-        <span className="font-size-small font-color-light buttons-after">$$</span>
+        <span className="font-color-light buttons-after">$$</span>
       </div>
     );
   }
 }
 
 OptionPicker.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  spriteSheet: PropTypes.string.isRequired,
+  length: PropTypes.number.isRequired,
   text: PropTypes.string,
   onClick: PropTypes.func
 };

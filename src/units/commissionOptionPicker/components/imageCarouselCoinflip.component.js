@@ -2,119 +2,105 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './imageCarouselCoinflip.component.css';
 
-
-import spriteSheet from '../detail_spritesheet.png';
-
-//var backgroundImagePositionStyle = { backgroundPosition: "0px 0px" };
-
 class ImageCarouselCoinflip extends Component {
 
   constructor(props) {
     super(props);
 
-    const { images, activeIndex } = this.props;
-
     this.state = {
-      frontImageUrl: images[activeIndex],
-      backImageUrl: images[activeIndex],
       animationClass: "",
-      indexFront: 0,
-      indexBack: 0,
-      backgroundImageStyleBack: {
-        backgroundImage: `url(${spriteSheet})`,
-        backgroundPosition: "0px, 0px"
-      },
-      backgroundImageStyleFront: {
-        backgroundImage: `url(${spriteSheet})`,
-        backgroundPosition: "0px, 0px"
-      },
-      frontPosition: 0,
-      backPosition: 0
+      frontSpritePosition: 0,
+      backSpritePosition: 0,
+      spriteSheet: this.isLarge() ? this.props.spriteSheetLarge : this.props.spriteSheet,
+      isLarge: this.isLarge()
     };
 
     this.imageCache = [];
   }
 
   componentDidMount = () => {
-    const { images } = this.props;
+    window.addEventListener("resize", this.updateSpritesheet);
+  };
 
-    // Preload all images for seamless animation.
-    for(let i = 0; i < images.length; i++){
-      this.imageCache.push(new Image());
-      this.imageCache[i].src = images[i];
-    }
-  }
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.updateSpritesheet);
+  };
 
   componentWillReceiveProps(nextProps) {
     // If index changed, animate.
     if(this.props.activeIndex !== nextProps.activeIndex){
       this.playAnimation(nextProps);
-    } else {
-      // If images changed (but not index), set.
-      this.setState({
-        frontImageUrl: nextProps.images[nextProps.activeIndex],
-        backImageUrl: nextProps.images[nextProps.activeIndex]
-      });
     }
   }
 
+  updateSpritesheet = () => {
+    if(this.isLarge() === this.state.isLarge) return;
+
+    this.setState({
+      spriteSheet: this.isLarge() ? this.props.spriteSheetLarge : this.props.spriteSheet,
+      isLarge: this.isLarge()
+    })
+  }
+
+  isLarge = () => {
+    return window.innerWidth >= 1500;
+  }
+
+  getSpritesheetInterval = () => {
+    let interval = -300;
+    if(window.innerWidth >= 1000) {
+      interval = -450;
+    }
+    if(window.innerWidth >= 1500) {
+      interval = -600;
+    }
+    if(window.innerWidth >= 2000) {
+      interval = -700;
+    }
+
+    return interval;
+  }
+
   playAnimation = (nextProps) => {
-    const { images, activeIndex } = this.props;
+    let nextPosition = nextProps.activeIndex * this.getSpritesheetInterval();
 
-    // 1. Prepare back image for flip.
-    let nextPosition = nextProps.activeIndex * -300;
-    /*(this.setState({
-      backImageUrl: images[nextProps.activeIndex],
-      backPosition: nextPosition
-    });*/
-
-    // 2. Flip
-    const animationClass = activeIndex < nextProps.activeIndex
+    // Flip
+    const animationClass = this.props.activeIndex < nextProps.activeIndex
       ? "animate-flip-right"
       : "animate-flip-left";
 
-    setTimeout(function() {
-      this.setState({
-        animationClass: animationClass,
-        backPosition: nextPosition
-      });
-    }.bind(this), 50);
+    this.setState({
+      animationClass: animationClass,
+      backSpritePosition: nextPosition
+    });
 
-    // 3. Prepare front image for animation reset.
+    // Prepare front image for animation reset.
     setTimeout(function() {
       this.setState({
-        frontImageUrl: images[nextProps.activeIndex],
-        frontPosition: nextPosition,
+        frontSpritePosition: nextPosition,
         animationClass: ""
       });
-    }.bind(this), 1050);
-
-    // 4. Remove animation class (prepare for next play).
-    setTimeout(function() {
-      //this.setState({ animationClass: "" });
-    }.bind(this), 2000);
+    }.bind(this), 1000);
   }
 
   render() {
-    const { animationClass, frontImageUrl, backImageUrl } = this.state;
+    const { animationClass, frontSpritePosition, backSpritePosition } = this.state;
 
     return (
       <div className="option-display-container">
         <div className={ "flip-container " + animationClass }>
-          <div className="front" style={{
-            backgroundImage: `url(${spriteSheet})`,
-            backgroundSize: "500% 100%",
-            backgroundPosition: this.state.frontPosition + "px, 0px"
-          }}
-          >
-
+          <div className="front"
+            style={{
+              backgroundImage: `url(${this.state.spriteSheet})`,
+              backgroundSize: "500% 100%",
+              backgroundPosition: frontSpritePosition + "px 0px"
+            }}>
           </div>
           <div className="back" style={{
-            backgroundImage: `url(${spriteSheet})`,
+            backgroundImage: `url(${this.state.spriteSheet})`,
             backgroundSize: "500% 100%",
-            backgroundPosition: this.state.backPosition + "px, 0px"
+            backgroundPosition: backSpritePosition + "px 0px"
           }}>
-
           </div>
         </div>
       </div>
@@ -123,7 +109,7 @@ class ImageCarouselCoinflip extends Component {
 }
 
 ImageCarouselCoinflip.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  spriteSheet: PropTypes.string.isRequired,
   activeIndex: PropTypes.number.isRequired
 }
 
