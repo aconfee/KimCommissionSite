@@ -5,6 +5,11 @@ body {
   font-weight: 200;
 }
 
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
 a:link {
   text-decoration: none; }
 

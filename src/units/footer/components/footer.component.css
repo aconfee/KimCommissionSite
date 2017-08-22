@@ -155,6 +155,9 @@ p {
 
   background-image: url("../social_icons_spritesheet.png");
   background-size: 250px 50px;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .footer
