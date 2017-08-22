@@ -175,9 +175,6 @@
   top: 0;
   left: 0;
 
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
