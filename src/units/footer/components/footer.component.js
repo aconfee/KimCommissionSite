@@ -10,11 +10,21 @@ function Footer(props) {
           <img className="logo" src="./images/logo.png" alt="kimbyarting logo" title="kimbyarting logo" />
           <p className="font-size-regular font-color-dark">Social</p>
           <div className="social-icon-container">
-            <a className="social-icon instagram" href="https://www.instagram.com/kimbyarting/" target="_blank" rel="noopener noreferrer" />
-            <a className="social-icon artstation" href="https://www.artstation.com/kimbyarting" target="_blank" rel="noopener noreferrer" />
-            <a className="social-icon facebook" href="https://www.facebook.com/kimbyarting/" target="_blank" rel="noopener noreferrer" />
-            <a className="social-icon twitter" href="https://twitter.com/kimbyarting" target="_blank" rel="noopener noreferrer" />
-            <a className="social-icon tumblr" href="http://kimbyarting.tumblr.com/" target="_blank" rel="noopener noreferrer" />
+            <a href="https://www.instagram.com/kimbyarting/" target="_blank" rel="noopener noreferrer">
+              <div className="social-icon instagram"></div>
+            </a>
+            <a href="https://www.artstation.com/kimbyarting" target="_blank" rel="noopener noreferrer">
+              <div className="social-icon artstation"></div>
+            </a>
+            <a href="https://www.facebook.com/kimbyarting/" target="_blank" rel="noopener noreferrer">
+              <div className="social-icon facebook"></div>
+            </a>
+            <a href="https://twitter.com/kimbyarting" target="_blank" rel="noopener noreferrer">
+              <div className="social-icon twitter"></div>
+            </a>
+            <a href="http://kimbyarting.tumblr.com/" target="_blank" rel="noopener noreferrer">
+              <div className="social-icon tumblr"></div>
+            </a>
           </div>
         </div>
       </span>
