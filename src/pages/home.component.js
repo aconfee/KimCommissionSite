@@ -25,9 +25,9 @@ class Home extends Component {
     return (
         <div className="waitlist-warning font-color-regular">
           <img className="warning-image" src="./images/logo.png" alt="Waitlist warning" title="Waitlist warning" />
-          <span>
+          <span className="waitlist-message">
             <p className="waitlist-header font-color-black">WAITLIST WARNING!</p>
-            <p>I&#39;m currently booked for the next couple months.<br/>Continue below to be added to whe waitlist :)</p>
+            <p>I&#39;m currently booked for the next couple months. Continue below to be added to whe waitlist :)</p>
           </span>
 
         </div>
