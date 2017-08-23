@@ -93,7 +93,7 @@ module.exports.sendInquiry = function(req, res) {
 
   let mailOptions = {
       from: '"Kimby Arting Commissions" <adamestela@gmail.com>',
-      to: "adamestela@gmail.com",
+      to: "kimbyarting@gmail.com",
       subject: "NEW COMMISSION INQUERY!!",
       text: message,
       html: messageHtml
@@ -137,7 +137,7 @@ module.exports.sendMessage = function(req, res) {
 
   let mailOptions = {
       from: '"Kimby Arting Commissions" <adamestela@gmail.com>',
-      to: "adamestela@gmail.com",
+      to: "kimbyarting@gmail.com",
       subject: "NEW COMMISSION MESSAGE!!",
       text: messageText,
       html: messageHtml

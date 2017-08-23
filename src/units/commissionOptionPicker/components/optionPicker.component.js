@@ -31,7 +31,7 @@ class OptionPicker extends Component {
 
         <ImageCarouselCoinflip spriteSheet={ spriteSheet } spriteSheetLarge={ spriteSheetLarge } activeIndex={ activeIndex }/>
 
-        <p className="font-size-small font-color-dark description-text">{ text }</p>
+        <p className="font-color-dark description-text">{ text }</p>
         <span className="font-color-light buttons-before">$</span>
 
         <RoundButtonGroup length={ length } onClick={ this.handleClick }/>
