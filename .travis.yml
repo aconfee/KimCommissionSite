@@ -18,6 +18,7 @@ after_failure:
 after_script:
 before_deploy:
 - npm run build
+- git commit -am "Build added for deploy to EB."
 deploy:
   provider: elasticbeanstalk
   access_key_id: AKIAI2NTZHEALG2YWTYA
@@ -26,6 +27,7 @@ deploy:
   region: us-west-2
   app: definitelynotkimsite
   env: definitelynotkimsite-dev
+  bucket_name: "elasticbeanstalk-us-west-2-539205837455"
   on:
     repo: aconfee/KimCommissionSite
 after_deploy:
