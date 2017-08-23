@@ -10,15 +10,14 @@ branchs:
   - master
 before_install:
 install:
-- npm install
+#- npm install
 before_script:
 script:
 after_success:
 after_failure:
 after_script:
 before_deploy:
-- npm run build
-- git commit -am "Build added for deploy to EB."
+#- npm run build
 deploy:
   provider: elasticbeanstalk
   access_key_id: AKIAI2NTZHEALG2YWTYA
