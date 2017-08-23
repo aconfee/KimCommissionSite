@@ -46,3 +46,37 @@
   margin: 0 auto;
   margin-bottom: 130px;
 }
+
+.waitlist-warning {
+  height: 200px;
+  background-color: #F0F0F0;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-direction: row;
+  flex-direction: row;
+
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  -webkit-align-items: center;
+  align-items: center;
+
+  margin-bottom: 130px;
+
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 1.5em;
+}
+
+.waitlist-header {
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.warning-image {
+  width: 150px;
+  height: 150px;
+  padding-right: 50px;
+}

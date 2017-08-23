@@ -15,16 +15,31 @@ class Home extends Component {
   constructor(props) {
     super(props);
     window.scrollTo(0,0);
+    this.props.getAvailability();
   }
 
-  render() {
-    return(
-      <div>
-        <div className="background">
-          <div className="elipse"></div>
-        </div>
-        { Landing() }
+  renderWaitlistWarning = () => {
 
+    if(this.props.availability !== "waitlist") return null;
+
+    return (
+        <div className="waitlist-warning font-color-regular">
+          <img className="warning-image" src="./images/logo.png" alt="Waitlist warning" title="Waitlist warning" />
+          <span>
+            <p className="waitlist-header font-color-black">WAITLIST WARNING!</p>
+            <p>I&#39;m currently booked for the next couple months.<br/>Continue below to be added to whe waitlist :)</p>
+          </span>
+
+        </div>
+    );
+  };
+
+  renderCheckoutProcess = () => {
+
+    if(this.props.availability === "closed") return null;
+
+    return (
+      <div>
         <div className="option-selectors">
 
           <CommissionEstimate />
@@ -65,7 +80,20 @@ class Home extends Component {
 
         <InquiryFormContainer />
         <HackyAssModalContainer />
+      </div>
+    );
+  };
 
+
+  render() {
+    return(
+      <div>
+        <div className="background">
+          <div className="elipse"></div>
+        </div>
+        { Landing({ availability: this.props.availability }) }
+        { this.renderWaitlistWarning() }
+        { this.renderCheckoutProcess() }
       </div>
     );
   }
