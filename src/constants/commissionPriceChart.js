@@ -1,12 +1,12 @@
 const COMMISSION_PRICING = {
   character: [
-    [50, 65, 75],   // sketch
-    [75, 90, 100],  // flat
-    [150, 175, 200],// painterly
-    [200, 250, 300] // illustrative
+    [40, 50, 60],   // sketch
+    [60, 80, 100],  // flat
+    [100, 160, 200],// painterly
+    [200, 300, 400] // illustrative
   ],
   background: [0, 10, 30],
-  asIsDiscount: 0.7 // 30% off.
+  asIsDiscount: 0.9 // 10% off.
 };
 
 export default COMMISSION_PRICING;

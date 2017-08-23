@@ -111,7 +111,9 @@ class Thumbnails extends Component {
       while(imageIndex < images.length){
 
         let imageUrl = images[imageIndex]
-        if(currentHeight + this.imageHeights[imageUrl] > columnHeight) {
+        // HEY!! Uncomment to bias right. Current bias is left.
+        // Bias left seems to be more right more often, so keeping like this for now.
+        if(currentHeight /*+ this.imageHeights[imageUrl]*/ > columnHeight) {
           break;
         }
 

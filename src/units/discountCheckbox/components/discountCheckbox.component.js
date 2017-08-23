@@ -23,7 +23,7 @@ class DiscountCheckbox extends Component {
   render() {
     return (
       <div className="discount-checkbox-container">
-        <Checkbox label="Save 30%" onClick={ this.handleClick } isChecked={ this.props.isChecked }/>
+        <Checkbox label="Save 10%" onClick={ this.handleClick } isChecked={ this.props.isChecked }/>
         <div className="tooltip-indicator" onClick={ this.handleTooltipClick }>?
           <div className="tooltip">
             <div className="tooltip-icon">?</div>
@@ -33,7 +33,7 @@ class DiscountCheckbox extends Component {
               changes.
               <br />
               <br />
-              <b>Save 30%</b> by agreeing to ‘as-is’ commission, where after
+              <b>Save 10%</b> by agreeing to ‘as-is’ commission, where after
               our extensive initial meeting, you trust my
               professional judgement to give you the best
               work possible :)

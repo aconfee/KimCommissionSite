@@ -61,7 +61,7 @@ const selectBackround = (estimateState, action) => {
 };
 
 const updateDiscount = (estimateState, action) => {
-  const discount = action.isChecked ? 0.7 : 1;
+  const discount = action.isChecked ? 0.9 : 1;
 
   return updateObject(estimateState, {
     discount,
