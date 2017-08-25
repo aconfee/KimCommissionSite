@@ -39,7 +39,7 @@ function Landing({ availability }) {
   return (
     <div className="landing">
       <div className="flex-section">
-        <div className="flex-container">
+        <div className="flex-container cover-container">
           <div>
             <p id="subtitle" className="font-color-regular">KimbyArting</p>
             <p id="title" className="font-color-dark">Commissions</p>
@@ -49,7 +49,7 @@ function Landing({ availability }) {
           </div>
         </div>
 
-        <div className="flex-container">
+        <div className="flex-container info-container">
           <div className="flex-one">
             <img src="./images/details-cover.png" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
           </div>

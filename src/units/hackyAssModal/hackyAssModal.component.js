@@ -26,7 +26,7 @@ class HackyAssModal extends Component {
             changes.
             <br />
             <br />
-            <b>Save 30%</b> by agreeing to ‘as-is’ commission, where after
+            <b>Save 10%</b> by agreeing to ‘as-is’ commission, where after
             our extensive initial meeting, you trust my
             professional judgement to give you the best
             work possible :)
