@@ -99,6 +99,7 @@ p {
   flex-wrap: wrap;
 
   margin-bottom: 100px;
+  padding: 0;
 }
 
 @media only screen and (min-width: 800px) {
@@ -115,6 +116,7 @@ p {
     flex-wrap: wrap;
 
     margin-bottom: 150px;
+    padding: 0 50px;
   }
 }
 
@@ -128,12 +130,25 @@ p {
   -webkit-align-items: center;
   align-items: center;
 
-  width: 50%;
-  max-width: 50%;
+  width: 80%;
+  max-width: 80%;
+}
+
+@media only screen and (min-width: 800px) {
+  .test-box{
+    width: 50%;
+    max-width: 50%;
+  }
 }
 
 .test-image {
-  width: 90%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+  .test-image {
+    width: 90%;
+  }
 }
 
 .test-image
