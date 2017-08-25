@@ -4,69 +4,6 @@ p {
 }
 
 .landing
-.flex-section {
-  max-width: 2200px;
-  margin: 0 auto;
-}
-
-.landing
-.flex-container {
-  display: -webkit-flex;
-  display: flex;
-
-  max-width: 2200px;
-
-  -webkit-flex-direction: column;
-  flex-direction: column;
-
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
-
-  -webkit-align-items: center;
-  align-items: center;
-
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-@media only screen and (min-width: 800px) {
-  .landing
-  .flex-container {
-    -webkit-flex-direction: row;
-    flex-direction: row;
-  }
-}
-
-.cover-container {
-  margin-bottom: 50px;
-}
-
-.info-container {
-  margin-bottom: 150px;
-}
-
-.landing
-.flex-self-portrait {
-  width: 75%;
-  max-width: 700px;
-}
-
-@media only screen and (min-width: 800px) {
-  .landing
-  .flex-self-portrait {
-    width: 50%;
-  }
-}
-
-.landing
-.flex-self-portrait
-img {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 100%;
-}
-
-.landing
 #title {
   position: relative;
 
@@ -96,28 +33,6 @@ img {
   #subtitle {
     font-size: 60px;
   }
-}
-
-.landing
-.flex-one {
-  width: 40%;
-  position: relative;
-  left: -50px;
-}
-
-@media only screen and (min-width: 800px) {
-  .landing
-  .flex-one {
-    width: auto;
-    position: auto;
-    left: 0;
-  }
-}
-
-.landing
-.flex-one
-img {
-  max-width: 100%;
 }
 
 .landing
@@ -169,4 +84,69 @@ p {
   .font-size-regular {
     font-size: 34px;
   }
+}
+
+.test-flex-container {
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-direction: column;
+  flex-direction: column;
+
+  -webkit-align-items: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 100px;
+}
+
+@media only screen and (min-width: 800px) {
+  .test-flex-container {
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 150px;
+  }
+}
+
+.test-box{
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  -webkit-align-items: center;
+  align-items: center;
+
+  width: 50%;
+  max-width: 50%;
+}
+
+.test-image {
+  width: 90%;
+}
+
+.test-image
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.cover-image
+img {
+  border-radius: 50%;
+}
+
+.row-division {
+  margin-bottom: 100px;
 }

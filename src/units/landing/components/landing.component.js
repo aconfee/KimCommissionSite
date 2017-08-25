@@ -38,21 +38,24 @@ function Landing({ availability }) {
 
   return (
     <div className="landing">
-      <div className="flex-section">
-        <div className="flex-container cover-container">
+      <div className="test-flex-container">
+        <div className="test-box">
           <div>
             <p id="subtitle" className="font-color-regular">KimbyArting</p>
             <p id="title" className="font-color-dark">Commissions</p>
           </div>
-          <div className="flex-self-portrait">
+        </div>
+        <div className="test-box row-division">
+          <div className="test-image cover-image">
             <img src="./images/kim-cover.jpg" alt="kim greenough" title="kim greenough" />
           </div>
         </div>
-
-        <div className="flex-container info-container">
-          <div className="flex-one">
+        <div className="test-box">
+          <div className="test-image">
             <img src="./images/details-cover.png" alt="kimbyarting mermaid art" title="kimby arting mermaid art" />
           </div>
+        </div>
+        <div className="test-box">
           { renderInfoMessage() }
           { renderClosedMessage() }
         </div>
