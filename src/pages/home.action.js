@@ -1,13 +1,10 @@
 import axios from 'axios';
+import { AVAILABILITY } from '../appsettings';
 
 export const getAvailability = () => {
-  const url = '/api/availability';
-
-  const request = axios.get(url);
-
   return {
     type: GET_AVAILABILITY_ACTION_TYPE,
-    payload: request
+    payload: AVAILABILITY
   };
 }
 
