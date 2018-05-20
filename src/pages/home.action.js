@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { AVAILABILITY } from '../appsettings';
 
 export const getAvailability = () => {
