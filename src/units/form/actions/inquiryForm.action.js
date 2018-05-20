@@ -35,7 +35,7 @@ export const submitInquery = (senderDetails, commissionDetails) => {
 }
 
 export const sendMessage = (senderDetails) => {
-  const url = '/api/contact/message';
+  const url = 'https://iu81vnqiwb.execute-api.us-west-2.amazonaws.com/dev/commission/message';
 
   const request = axios.post(url, {
     senderDetails
